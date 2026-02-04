@@ -1,0 +1,63 @@
+/* ===================
+   FOOTER STYLES
+   =================== */
+
+.footer {
+  background-color: var(--surface);
+  color: var(--text);
+  padding: 2.5rem var(--page-padding);
+  margin-top: auto; /* Push footer to bottom */
+  border-top: 1px solid var(--border);
+}
+
+.footer-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.social-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: color var(--transition-fast), text-decoration var(--transition-fast);
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+}
+
+.social-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* Copyright */
+.copyright {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  margin: 0;
+}
+
+/* Continuity Note */
+.continuity-note {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin: 0;
+  opacity: 0.7;
+  font-style: italic;
+}

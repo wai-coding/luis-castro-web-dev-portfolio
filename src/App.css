@@ -1,0 +1,14 @@
+/* ===================
+   APP LAYOUT STYLES
+   =================== */
+
+/**
+ * Main app container uses flexbox to:
+ * 1. Stack header, content, and footer vertically
+ * 2. Push footer to the bottom even with little content
+ */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
