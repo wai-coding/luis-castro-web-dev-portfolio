@@ -11,6 +11,7 @@
   transition: transform var(--transition-base), box-shadow var(--transition-base);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .project-card:hover {
@@ -124,20 +125,11 @@
   margin-bottom: 0;
 }
 
-.featured-badge {
+.project-featured-star {
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  background-color: var(--surface-2);
-  padding: 0.25rem 0.625rem;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border);
-  white-space: nowrap;
+  top: 14px;
+  right: 14px;
+  font-size: 20px;
   z-index: 1;
 }
 

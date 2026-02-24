@@ -42,46 +42,11 @@ import dancefloorDefenderImage from '../assets/projects/dancefloor-defender.png'
 
 const projects = [
   {
-    id: 1,
-    slug: "dancefloor-defender",
-    title: "Dancefloor Defender",
-    description: "Dancefloor Defender is a small arcade-style game where the player must defend the dancefloor by reacting to incoming enemies. The project focuses on core JavaScript concepts such as game loops, collision detection, keyboard controls, and dynamic DOM updates.",
-    shortDescription: "A browser-based arcade game built with JavaScript, focused on game logic and real-time interactions.",
-    techStack: ["JavaScript", "HTML", "CSS", "Game Logic", "DOM Manipulation"],
-    clientRepo: "https://github.com/wai-coding/dancefloor-defender-game-project",
-    liveLink: "https://wai-coding.github.io/dancefloor-defender-game-project/",
-    image: dancefloorDefenderImage,
-    featured: false,
-    keyFeatures: [
-      "Real-time game loop and collision detection",
-      "Keyboard-controlled player movement",
-      "Dynamic DOM updates without frameworks"
-    ]
-  },
-  {
-    id: 2,
-    slug: "foundit",
-    title: "FoundIt",
-    description: "FoundIt is a second-hand marketplace where users can browse products, view details, and manage listings. It includes client-side search, multi-filter + sorting, pagination, favorites stored in localStorage, and full CRUD (create, edit, delete) integrated with a mock REST API (json-server).",
-    shortDescription: "A second-hand marketplace React app with search, filtering, pagination, favorites, and full CRUD via a REST API.",
-    techStack: ["React", "JavaScript", "React Router", "Vite", "REST API", "JSON Server"],
-    clientRepo: "https://github.com/wai-coding/foundit-app",
-    serverRepo: "https://github.com/wai-coding/json-server-backend",
-    liveLink: "https://foundit-app.netlify.app/",
-    image: foundItImage,
-    featured: false,
-    keyFeatures: [
-      "Product search, filtering, sorting & pagination",
-      "Full CRUD integrated with a REST API",
-      "Favorites persisted with localStorage"
-    ]
-  },
-  {
     id: 3,
     slug: "dnb-hub",
     title: "DNB Hub",
-    description: "DNB Hub is a full stack MERN application designed to centralize information about Drum & Bass events and community members. It features JWT-based authentication, protected routes, and full CRUD functionality for core entities such as events, artists, and promoters. The project focuses on building a structured REST API and integrating it with a React client in a clean and maintainable way.",
-    shortDescription: "A full stack MERN web app for Drum & Bass events, artists, and promoters with JWT authentication and CRUD dashboards.",
+    description: "Full-stack MERN platform to manage Drum & Bass events, artists, and promoters. Includes JWT authentication, protected routes, and CRUD dashboards powered by a structured REST API with clear separation between frontend and backend, using MongoDB and Mongoose relationships.",
+    shortDescription: "Full-stack MERN app with JWT auth, protected routes, and CRUD dashboards for events, artists, and promoters.",
     techStack: ["React", "JavaScript", "React Router", "Node.js", "Express.js", "MongoDB", "Mongoose", "REST API", "JWT Authentication"],
     clientRepo: "https://github.com/wai-coding/dnb-hub-client",
     serverRepo: "https://github.com/wai-coding/dnb-hub-server",
@@ -89,14 +54,53 @@ const projects = [
     image: dnbHubImage,
     featured: true,
     keyFeatures: [
-      "JWT authentication + protected routes",
-      "REST API with Mongoose models and relationships",
+      "JWT authentication and protected routes",
+      "REST API with MongoDB/Mongoose models and relationships",
       "Full CRUD dashboards for events, artists, and promoters"
     ],
     learningHighlights: [
-      "Designed a REST API with real data relationships",
-      "Implemented authentication and protected routes",
-      "Learned how to structure a full-stack MERN project end-to-end"
+      "Designed data models and relationships in MongoDB with Mongoose",
+      "Implemented authentication flows (signup/login/verify) with JWT",
+      "Built and deployed a full-stack app end-to-end with clean separation of concerns"
+    ]
+  },
+  {
+    id: 2,
+    slug: "foundit",
+    title: "FoundIt",
+    description: "A second-hand marketplace built with React. Includes client-side search, multi-filter + sorting, pagination, favorites via localStorage, and full CRUD connected to a mock REST API (json-server).",
+    shortDescription: "React marketplace application with search, filters, sorting, pagination, favorites, and CRUD via REST API.",
+    techStack: ["React", "JavaScript", "React Router", "Vite", "REST API", "JSON Server"],
+    clientRepo: "https://github.com/wai-coding/foundit-app",
+    serverRepo: "https://github.com/wai-coding/json-server-backend",
+    liveLink: "https://foundit-app.netlify.app/",
+    image: foundItImage,
+    featured: false,
+    keyFeatures: [
+      "Search, multi-filtering and sorting",
+      "Pagination with consistent UX on filter changes",
+      "Favorites stored in localStorage",
+      "Full CRUD (create/edit/delete) via REST API",
+      "Product status handling (available/sold)"
+    ]
+  },
+  {
+    id: 1,
+    slug: "dancefloor-defender",
+    title: "Dancefloor Defender",
+    description: "Retro arcade shooter built with vanilla JavaScript. Defend the dancefloor through progressive difficulty, multiple enemy behaviors, power-ups, and a persistent Top 10 leaderboard using localStorage.",
+    shortDescription: "Vanilla JavaScript arcade shooter with progressive difficulty, mobile controls, and persistent high scores.",
+    techStack: ["JavaScript", "HTML", "CSS", "Game Logic", "DOM Manipulation"],
+    clientRepo: "https://github.com/wai-coding/dancefloor-defender",
+    liveLink: "https://wai-coding.github.io/dancefloor-defender/",
+    image: dancefloorDefenderImage,
+    featured: false,
+    keyFeatures: [
+      "Progressive difficulty and level ramp",
+      "Multiple enemy types and distinct behaviors",
+      "Power-ups (risk/reward mechanic)",
+      "Persistent leaderboard and settings via localStorage",
+      "Touch-friendly controls for mobile"
     ]
   }
 ];

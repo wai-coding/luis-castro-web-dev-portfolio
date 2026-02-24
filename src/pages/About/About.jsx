@@ -18,9 +18,9 @@ function About() {
         <section className="about-section">
           <h2 className="section-title">Background</h2>
           <p className="about-text">
-            I'm a Junior Full Stack Developer focused on building clean, practical web applications.
-            Before transitioning into development, I had a background in DJing and music production, 
-            which helped shape my creative and problem-solving approach.
+            I'm a Full-Stack Web Developer focused on building clean, maintainable web applications with the MERN stack.
+            I care about readable code, good UX, and shipping features end-to-end.
+            I focus on writing readable, maintainable code and understanding the full flow of an application.
           </p>
         </section>
 
@@ -28,9 +28,7 @@ function About() {
         <section className="about-section">
           <h2 className="section-title">Education</h2>
           <p className="about-text">
-            I recently completed a Web Development bootcamp at Ironhack (2025–2026).
-            During the program, I built a strong foundation in full stack development,
-            working with React on the frontend and Node.js, Express.js, and MongoDB on the backend.
+            I completed Ironhack's Web Development Bootcamp (2025–2026), where I built and deployed multiple projects covering frontend, backend, authentication, and REST API integration.
           </p>
         </section>
 
@@ -38,8 +36,7 @@ function About() {
         <section className="about-section">
           <h2 className="section-title">Career Goals</h2>
           <p className="about-text">
-            I'm looking for a junior full stack role where I can contribute to real-world applications, 
-            improve my React and backend skills, and grow within a collaborative development team.
+            I'm looking for a Junior Frontend or Full-Stack role where I can contribute to production code, collaborate with experienced developers, and continue growing.
           </p>
         </section>
 
@@ -47,9 +44,11 @@ function About() {
         <section className="about-section">
           <h2 className="section-title">Strengths</h2>
           <ul className="about-text">
-            <li>Strong fundamentals in full stack web development</li>
-            <li>Attention to detail and clean code practices</li>
-            <li>Fast learner with a hands-on, project-driven mindset</li>
+            <li>REST APIs with Node.js / Express and MongoDB (Mongoose)</li>
+            <li>JWT authentication and protected routes</li>
+            <li>Clean, component-based React UI (routing, state, reusable components)</li>
+            <li>Strong debugging mindset and attention to detail</li>
+            <li>Comfortable with Git and iterative releases</li>
           </ul>
         </section>
 
@@ -61,8 +60,9 @@ function About() {
               <h3>Frontend</h3>
               <ul>
                 <li>React</li>
-                <li>JavaScript</li>
-                <li>HTML & CSS</li>
+                <li>JavaScript (ES6+)</li>
+                <li>HTML5 / CSS3</li>
+                <li>React Router</li>
               </ul>
             </div>
             <div className="skill-category">
@@ -70,16 +70,17 @@ function About() {
               <ul>
                 <li>Node.js</li>
                 <li>Express.js</li>
-                <li>MongoDB</li>
-                <li>REST API</li>
+                <li>MongoDB + Mongoose</li>
+                <li>REST APIs</li>
                 <li>JWT Authentication</li>
               </ul>
             </div>
             <div className="skill-category">
               <h3>Tools</h3>
               <ul>
-                <li>Git & GitHub</li>
+                <li>Git / GitHub</li>
                 <li>VS Code</li>
+                <li>Netlify / GitHub Pages (deployment)</li>
               </ul>
             </div>
           </div>

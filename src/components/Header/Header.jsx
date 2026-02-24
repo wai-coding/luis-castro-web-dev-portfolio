@@ -19,7 +19,11 @@ function Header() {
       <div className="header-container">
         {/* Logo/Name - links back to home */}
         <Link to="/" className="logo">
-          Luís Castro
+          <img
+            src="/favicon.png"
+            alt="Luís Castro logo"
+            className="navbar-logo"
+          />
         </Link>
 
         {/* Main Navigation */}

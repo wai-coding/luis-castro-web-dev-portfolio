@@ -17,10 +17,8 @@ function Contact() {
         {/* Page Header */}
         <h1 className="page-title">Get In Touch</h1>
         <p className="page-subtitle">
-          I'm open to both full-time and freelance opportunities.
-          Based in Santo Tirso, Porto, Portugal — open to remote worldwide.
-          Whether you have a question or just want to say hi, 
-          I'll do my best to get back to you!
+          Open to Junior Frontend or Full-Stack opportunities (remote or hybrid).
+          Porto, Portugal, available worldwide. The fastest way to reach me is email or LinkedIn.
         </p>
 
         {/* Contact Options */}

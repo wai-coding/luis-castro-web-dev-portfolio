@@ -38,8 +38,7 @@ function Projects() {
         {/* Page Header */}
         <h1 className="page-title">My Projects</h1>
         <p className="projects-description">
-          Here are some projects I've built during and after my bootcamp. 
-          Each one taught me something new about web development.
+          Selected projects built during and after my bootcamp, focused on real-world features such as authentication, CRUD, filtering, and clean UI patterns. Click any project to see key features, what I learned, and the repos.
         </p>
 
         {/* Filter Buttons */}
@@ -76,6 +75,7 @@ function Projects() {
               serverRepo={project.serverRepo}
               liveLink={project.liveLink}
               image={project.image}
+              isFeatured={project.featured}
             />
           ))}
         </div>

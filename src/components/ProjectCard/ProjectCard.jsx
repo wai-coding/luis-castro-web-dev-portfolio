@@ -23,6 +23,16 @@ import './ProjectCard.css';
 function ProjectCard({ slug, title, description, techStack, clientRepo, serverRepo, liveLink, image, isFeatured }) {
   return (
     <article className="project-card">
+      {isFeatured && (
+        <span
+          className="project-featured-star"
+          aria-label="Featured project"
+          title="Featured project"
+        >
+          ★
+        </span>
+      )}
+
       {/* Project Image or Placeholder */}
       <Link to={`/projects/${slug}`} className="project-image-link">
         <div className="project-image">
@@ -33,7 +43,6 @@ function ProjectCard({ slug, title, description, techStack, clientRepo, serverRe
               <span>{title.charAt(0)}</span>
             </div>
           )}
-          {isFeatured && <span className="featured-badge">Main Project — Full Stack</span>}
         </div>
       </Link>
 

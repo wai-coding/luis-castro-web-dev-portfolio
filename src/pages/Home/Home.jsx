@@ -22,15 +22,15 @@ function Home() {
         {/* Welcome Text */}
         <p className="hero-greeting">Hi, I'm</p>
         <h1 className="hero-name">Luís Castro</h1>
-        <h2 className="hero-title">Junior Full Stack Developer</h2>
+        <h2 className="hero-title">Full-Stack Web Developer (MERN)</h2>
         
         {/* Brief Introduction */}
         <p className="hero-headline">
-          I'm a Junior Full Stack Developer focused on building clean, practical web applications from frontend to backend.
+          I build production-ready web applications using React, Node.js and MongoDB.
+          I work across both frontend interfaces and backend REST APIs.
         </p>
         <p className="hero-description">
-          I enjoy working with React on the client side and Node.js / MongoDB on the server, turning ideas into functional products.
-          I value clarity, maintainable code, and learning by building real projects.
+          Ironhack Web Development Bootcamp graduate (400+ hours). Based in Porto, Portugal. Open to remote and international roles.
         </p>
 
         {/* Call to Action Buttons */}
@@ -41,6 +41,12 @@ function Home() {
           <Link to="/contact" className="btn btn-secondary">
             Contact Me
           </Link>
+          <a href="https://github.com/wai-coding" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/luiscastrocoding/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            LinkedIn
+          </a>
         </div>
       </section>
 

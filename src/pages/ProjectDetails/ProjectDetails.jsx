@@ -41,7 +41,7 @@ function ProjectDetails() {
           <div className="details-title-row">
             <h1 className="details-title">{project.title}</h1>
             {project.featured && (
-              <span className="details-badge">Main Project — Full Stack</span>
+              <span className="details-badge">Main Project, Full Stack</span>
             )}
           </div>
         </header>
@@ -49,11 +49,18 @@ function ProjectDetails() {
         {/* Project Image */}
         {project.image && (
           <div className="details-image-container">
-            <img 
-              src={project.image} 
-              alt={`${project.title} screenshot`}
-              className="project-image-full"
-            />
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-detail-image-link"
+            >
+              <img 
+                src={project.image} 
+                alt={`${project.title} screenshot`}
+                className="project-image-full"
+              />
+            </a>
           </div>
         )}
 

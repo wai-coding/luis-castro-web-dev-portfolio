@@ -59,10 +59,16 @@
 }
 
 .project-image-full {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
   border-radius: var(--radius-lg);
   display: block;
+}
+
+.project-detail-image-link {
+  display: block;
+  cursor: pointer;
 }
 
 /* Sections */
@@ -229,6 +235,12 @@
 /* ===================
    MOBILE RESPONSIVE
    =================== */
+
+@media (max-width: 768px) {
+  .project-image-full {
+    height: 260px;
+  }
+}
 
 @media (max-width: 480px) {
   .project-details-container {

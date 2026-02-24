@@ -41,7 +41,7 @@ function Footer() {
         </p>
 
         <p className="continuity-note">
-          This portfolio and its projects are continuously improved.
+          Currently seeking a Junior Frontend or Full-Stack role. Open to remote opportunities.
         </p>
       </div>
     </footer>
