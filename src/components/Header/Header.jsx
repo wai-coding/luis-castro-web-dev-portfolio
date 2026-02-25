@@ -17,15 +17,6 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        {/* Logo/Name - links back to home */}
-        <Link to="/" className="logo">
-          <img
-            src="/favicon.png"
-            alt="Luís Castro logo"
-            className="navbar-logo"
-          />
-        </Link>
-
         {/* Main Navigation */}
         <nav className="nav">
           <ul className="nav-list">
@@ -40,20 +31,20 @@ function Header() {
             </li>
             <li>
               <Link 
-                to="/about" 
-                className={`nav-link ${currentPath === '/about' ? 'active' : ''}`}
-                aria-current={currentPath === '/about' ? 'page' : undefined}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link 
                 to="/projects" 
                 className={`nav-link ${currentPath === '/projects' ? 'active' : ''}`}
                 aria-current={currentPath === '/projects' ? 'page' : undefined}
               >
                 Projects
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/about" 
+                className={`nav-link ${currentPath === '/about' ? 'active' : ''}`}
+                aria-current={currentPath === '/about' ? 'page' : undefined}
+              >
+                About
               </Link>
             </li>
             <li>

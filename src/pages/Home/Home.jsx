@@ -19,6 +19,13 @@ function Home() {
   return (
     <main className="home">
       <section className="hero">
+        {/* Logo */}
+        <img
+          src="/favicon.png"
+          alt="Luís Castro logo"
+          className="hero-logo"
+        />
+
         {/* Welcome Text */}
         <p className="hero-greeting">Hi, I'm</p>
         <h1 className="hero-name">Luís Castro</h1>
