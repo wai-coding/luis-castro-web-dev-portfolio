@@ -10,14 +10,14 @@
 .about-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 4rem var(--page-padding);
+  padding: 2.75rem var(--page-padding);
 }
 
 .about .page-title {
   font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 700;
   color: var(--text);
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 2rem 0;
   text-align: center;
   letter-spacing: -0.02em;
 }

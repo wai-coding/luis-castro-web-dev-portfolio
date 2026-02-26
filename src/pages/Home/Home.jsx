@@ -93,11 +93,6 @@ function Home() {
               />
             ))}
           </div>
-          <div className="featured-cta">
-            <Link to="/projects" className="btn btn-secondary">
-              View All Projects
-            </Link>
-          </div>
         </section>
       )}
 
@@ -119,6 +114,11 @@ function Home() {
                 image={project.image}
               />
             ))}
+          </div>
+          <div className="featured-cta">
+            <Link to="/projects" className="btn btn-secondary">
+              View All Projects
+            </Link>
           </div>
         </section>
       )}

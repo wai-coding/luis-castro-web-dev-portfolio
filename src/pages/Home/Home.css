@@ -10,7 +10,7 @@
 .hero {
   max-width: 720px;
   margin: 0 auto;
-  padding: 5rem var(--page-padding) 4rem;
+  padding: 3rem var(--page-padding) 3rem;
   text-align: center;
 }
 
@@ -18,7 +18,7 @@
   height: 64px;
   width: auto;
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
 }
 
 .hero-greeting {
@@ -134,7 +134,7 @@
   background-color: var(--surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 3.5rem var(--page-padding);
+  padding: 2rem var(--page-padding);
   text-align: center;
 }
 
@@ -142,7 +142,7 @@
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--muted);
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -151,8 +151,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
-  max-width: 640px;
+  gap: 0.5rem;
+  max-width: 600px;
   margin: 0 auto;
   list-style: none;
   padding: 0;
@@ -161,10 +161,11 @@
 .skill-item {
   background-color: var(--surface-2);
   color: var(--text);
-  padding: 0.5rem 1.25rem;
+  padding: 0.4rem 0.9rem;
   border-radius: var(--radius-full);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.1;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
 }
@@ -194,12 +195,12 @@
 
 .featured-cta {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
 }
 
 /* More Projects Section */
 .more-projects {
-  padding: 1.5rem var(--page-padding) 4rem;
+  padding: 0.75rem var(--page-padding) 4rem;
   max-width: var(--container-max);
   margin: 0 auto;
 }
@@ -246,7 +247,7 @@
   }
 
   .more-projects {
-    padding: 1rem var(--page-padding) 3rem;
+    padding: 0.75rem var(--page-padding) 3rem;
   }
 
   .hero-logo {

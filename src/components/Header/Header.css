@@ -22,7 +22,7 @@
 .header-container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0.65rem var(--page-padding);
+  padding: 0.5rem var(--page-padding);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9375rem;
-  padding: 0.375rem 0.5rem;
+  padding: 0.3rem 0.45rem;
   position: relative;
   transition: color var(--transition-fast);
   border-radius: 2px;

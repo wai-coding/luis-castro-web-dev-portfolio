@@ -10,7 +10,7 @@
 .projects-container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 4rem var(--page-padding);
+  padding: 2.75rem var(--page-padding);
 }
 
 .projects .page-title {
