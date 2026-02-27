@@ -21,16 +21,30 @@ import './Projects.css';
  * Tech tags are automatically extracted for the filter buttons.
  */
 function Projects() {
-  // State for the currently selected tech filter
-  const [selectedTech, setSelectedTech] = useState('All');
+  const [selectedTechs, setSelectedTechs] = useState([]);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   // Extract all unique tech tags from projects for filter buttons
   const allTechTags = [...new Set(projects.flatMap((project) => project.techStack))].sort();
 
-  // Filter projects based on selected tech
-  const filteredProjects = selectedTech === 'All'
+  // Filter projects: AND logic — show projects matching ALL selected techs
+  const filteredProjects = selectedTechs.length === 0
     ? projects
-    : projects.filter((project) => project.techStack.includes(selectedTech));
+    : projects.filter((project) =>
+        selectedTechs.every((tech) => project.techStack.includes(tech))
+      );
+
+  const toggleTech = (tech) => {
+    setSelectedTechs((prev) =>
+      prev.includes(tech)
+        ? prev.filter((t) => t !== tech)
+        : [...prev, tech]
+    );
+  };
+
+  const clearFilters = () => {
+    setSelectedTechs([]);
+  };
 
   return (
     <main className="projects">
@@ -41,26 +55,39 @@ function Projects() {
           Selected projects built during and after my bootcamp, focused on real-world features such as authentication, CRUD, filtering, and clean UI patterns. Click any project to see key features, what I learned, and the repos.
         </p>
 
-        {/* Filter Buttons */}
-        <nav className="filter-buttons" aria-label="Filter projects by technology">
+        {/* Filters Toggle */}
+        <div className="filters-wrapper">
           <button
-            className={`filter-btn ${selectedTech === 'All' ? 'active' : ''}`}
-            onClick={() => setSelectedTech('All')}
-            aria-pressed={selectedTech === 'All'}
+            className="filters-toggle-btn"
+            onClick={() => setFiltersOpen((prev) => !prev)}
+            aria-expanded={filtersOpen}
           >
-            All
+            Filters{selectedTechs.length > 0 ? ` (${selectedTechs.length})` : ''}
+            <span className={`filters-caret ${filtersOpen ? 'open' : ''}`}>▾</span>
           </button>
-          {allTechTags.map((tech) => (
-            <button
-              key={tech}
-              className={`filter-btn ${selectedTech === tech ? 'active' : ''}`}
-              onClick={() => setSelectedTech(tech)}
-              aria-pressed={selectedTech === tech}
-            >
-              {tech}
-            </button>
-          ))}
-        </nav>
+
+          {filtersOpen && (
+            <div className="filters-panel" role="group" aria-label="Filter projects by technology">
+              <div className="filters-chips">
+                {allTechTags.map((tech) => (
+                  <button
+                    key={tech}
+                    className={`filter-chip ${selectedTechs.includes(tech) ? 'active' : ''}`}
+                    onClick={() => toggleTech(tech)}
+                    aria-pressed={selectedTechs.includes(tech)}
+                  >
+                    {tech}
+                  </button>
+                ))}
+              </div>
+              {selectedTechs.length > 0 && (
+                <button className="filters-clear-btn" onClick={clearFilters}>
+                  Clear all
+                </button>
+              )}
+            </div>
+          )}
+        </div>
 
         {/* Projects Grid */}
         <div className="projects-grid">
@@ -76,13 +103,14 @@ function Projects() {
               liveLink={project.liveLink}
               image={project.image}
               isFeatured={project.featured}
+              startYear={project.startYear}
             />
           ))}
         </div>
 
         {/* No results message */}
         {filteredProjects.length === 0 && (
-          <p className="no-results">No projects found for "{selectedTech}".</p>
+          <p className="no-results">No projects match the selected filters.</p>
         )}
       </div>
     </main>

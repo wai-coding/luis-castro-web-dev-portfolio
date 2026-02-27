@@ -10,7 +10,7 @@
 .contact-container {
   max-width: 560px;
   margin: 0 auto;
-  padding: 2.75rem var(--page-padding);
+  padding: 1.25rem var(--page-padding) 2.75rem;
   text-align: center;
 }
 
@@ -101,7 +101,7 @@
 
 @media (max-width: 768px) {
   .contact-container {
-    padding: 3rem var(--page-padding);
+    padding: 1.25rem var(--page-padding) 2.75rem;
   }
 
   .contact .page-title {

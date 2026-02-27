@@ -10,7 +10,7 @@
 .about-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2.75rem var(--page-padding);
+  padding: 1.25rem var(--page-padding) 2.75rem;
 }
 
 .about .page-title {
@@ -53,35 +53,35 @@
   text-decoration-color: var(--color-primary);
 }
 
-/* Skills Grid */
-.skills-grid {
+/* Skills Grid — scoped to .about */
+.about .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
-.skill-category {
+.about .skill-category {
   background-color: var(--bg);
   padding: 1.5rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
 }
 
-.skill-category h3 {
+.about .skill-category h3 {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
   margin: 0 0 1rem 0;
 }
 
-.skill-category ul {
+.about .skill-category ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.skill-category li {
+.about .skill-category li {
   color: var(--muted);
   padding: 0.375rem 0;
   position: relative;
@@ -90,7 +90,7 @@
 }
 
 /* Bullet point styling */
-.skill-category li::before {
+.about .skill-category li::before {
   content: '▸';
   color: var(--color-primary);
   position: absolute;
@@ -103,7 +103,7 @@
 
 @media (max-width: 768px) {
   .about-container {
-    padding: 3rem var(--page-padding);
+    padding: 1.25rem var(--page-padding) 2.75rem;
   }
 
   .about .page-title {

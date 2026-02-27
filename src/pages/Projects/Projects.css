@@ -10,7 +10,7 @@
 .projects-container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 2.75rem var(--page-padding);
+  padding: 1.25rem var(--page-padding) 2.75rem;
 }
 
 .projects .page-title {
@@ -24,55 +24,131 @@
 
 /* Projects Description - Explicitly Centered */
 .projects-description {
-  font-size: 1.0625rem;
+  font-size: 0.925rem;
   color: var(--muted);
   text-align: center;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2.5rem;
-  line-height: 1.65;
+  margin-bottom: 1rem;
+  line-height: 1.5;
   width: 100%;
 }
 
-/* Filter Buttons */
-.filter-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 2.5rem;
+/* Filters Toggle & Panel */
+.filters-wrapper {
+  text-align: center;
+  margin-bottom: 1.25rem;
 }
 
-.filter-btn {
+.filters-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   background-color: var(--surface);
-  color: var(--muted);
+  color: var(--text);
   border: 1px solid var(--border);
-  padding: 0.5rem 1.125rem;
+  padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
-  font-weight: 500;
-  font-size: 0.875rem;
+  font-weight: 600;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
-.filter-btn:hover {
+.filters-toggle-btn:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
   background-color: var(--accent-soft);
 }
 
-.filter-btn.active {
+.filters-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.filters-caret {
+  font-size: 0.75rem;
+  transition: transform var(--transition-fast);
+  display: inline-block;
+}
+
+.filters-caret.open {
+  transform: rotate(180deg);
+}
+
+.filters-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.625rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.filters-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.filter-chip {
+  background-color: var(--surface-2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 0.725rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--accent-soft);
+}
+
+.filter-chip.active {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   color: var(--bg);
   font-weight: 600;
 }
 
-.filter-btn:focus-visible {
+.filter-chip:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.filters-clear-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.725rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm, 4px);
+  transition: all var(--transition-fast);
+}
+
+.filters-clear-btn:hover {
+  background-color: var(--accent-soft);
+  text-decoration: underline;
+}
+
+.filters-clear-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 /* Projects Grid Layout */
@@ -80,6 +156,29 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
+  grid-auto-rows: 1fr;
+}
+
+/* Override card description truncation on Projects page */
+.projects .project-description {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
+}
+
+/* Fix: Align tech-stack start position across all project cards.
+   Remove margin-top:auto so .project-card-bottom flows right after
+   the description instead of being pushed to the card bottom.
+   flex:1 lets the bottom section fill remaining space, keeping
+   .project-actions (which has its own margin-top:auto) at the
+   very bottom → buttons stay aligned. */
+.projects .project-card-top {
+  min-height: 50px;
+}
+
+.projects .project-card-bottom {
+  margin-top: 0;
+  flex: 1;
 }
 
 /* No Results Message */
@@ -96,7 +195,7 @@
 
 @media (max-width: 768px) {
   .projects-container {
-    padding: 3rem var(--page-padding);
+    padding: 1.25rem var(--page-padding) 2.75rem;
   }
 
   .projects .page-title {

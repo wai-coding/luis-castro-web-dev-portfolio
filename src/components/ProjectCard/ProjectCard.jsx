@@ -20,9 +20,9 @@ import './ProjectCard.css';
  * This component is used by the Projects page to render each project
  * from the data/projects.js file.
  */
-function ProjectCard({ slug, title, description, techStack, clientRepo, serverRepo, liveLink, image, isFeatured }) {
+function ProjectCard({ slug, title, description, techStack, clientRepo, serverRepo, liveLink, image, isFeatured, startYear }) {
   return (
-    <article className="project-card">
+    <article className="project-card" data-slug={slug}>
       {isFeatured && (
         <span
           className="project-featured-star"
@@ -50,23 +50,26 @@ function ProjectCard({ slug, title, description, techStack, clientRepo, serverRe
       <div className="project-content">
         <div className="project-header">
           <h3 className="project-title">
-            <Link to={`/projects/${slug}`} className="project-title-link">{title}</Link>
+            <Link to={`/projects/${slug}`} className="project-title-link">{title}{startYear ? ` (${startYear})` : ''}</Link>
           </h3>
         </div>
         
-        <p className="project-description">{description}</p>
-
-        {/* Tech Stack Tags */}
-        <div className="tech-stack">
-          {techStack.map((tech, index) => (
-            <span key={index} className="tech-tag">
-              {tech}
-            </span>
-          ))}
+        <div className="project-card-top">
+          <p className="project-description">{description}</p>
         </div>
 
-        {/* Project Actions (Links + Details) */}
-        <div className="project-actions">
+        <div className="project-card-bottom">
+          {/* Tech Stack Tags */}
+          <div className="tech-stack">
+            {techStack.map((tech, index) => (
+              <span key={index} className="tech-tag">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* Project Actions (Links + Details) */}
+          <div className="project-actions">
           {/* Project Links */}
           <div className="project-links">
             <a 
@@ -83,17 +86,19 @@ function ProjectCard({ slug, title, description, techStack, clientRepo, serverRe
               rel="noopener noreferrer"
               className="project-link github-link"
             >
-              Client Repo
+              Frontend Repo
             </a>
-            {serverRepo && (
+            {serverRepo ? (
               <a 
                 href={serverRepo} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="project-link server-link"
               >
-                Server Repo
+                Backend Repo
               </a>
+            ) : (
+              <span className="project-link-placeholder" aria-hidden="true" />
             )}
           </div>
 
@@ -101,6 +106,7 @@ function ProjectCard({ slug, title, description, techStack, clientRepo, serverRe
           <Link to={`/projects/${slug}`} className="view-details-link">
             View details →
           </Link>
+        </div>
         </div>
       </div>
     </article>

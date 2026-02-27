@@ -40,10 +40,13 @@ function ProjectDetails() {
         <header className="details-header">
           <div className="details-title-row">
             <h1 className="details-title">{project.title}</h1>
-            {project.featured && (
+            {project.featured && project.slug !== 'dnb-hub' && (
               <span className="details-badge">Main Project, Full Stack</span>
             )}
           </div>
+          {project.startYear && (
+            <p className="details-year">{project.startYear}</p>
+          )}
         </header>
 
         {/* Project Image */}
@@ -121,7 +124,7 @@ function ProjectDetails() {
             rel="noopener noreferrer"
             className="btn btn-secondary"
           >
-            Client Repo
+            Frontend Repo
           </a>
           {project.serverRepo && (
             <a
@@ -130,7 +133,7 @@ function ProjectDetails() {
               rel="noopener noreferrer"
               className="btn btn-secondary"
             >
-              Server Repo
+              Backend Repo
             </a>
           )}
         </section>

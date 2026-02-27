@@ -10,6 +10,18 @@ import './Home.css';
  * Contains a hero section with introduction and call-to-action buttons.
  * Also displays featured projects from the projects data.
  */
+const technologies = [
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg", invert: true },
+  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+  { name: "REST API", icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3C/svg%3E" },
+  { name: "JWT Auth", icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0110 0v4'/%3E%3C/svg%3E" },
+  { name: "Git & GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: "HTML & CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+];
+
 function Home() {
   // Filter projects that have featured: true
   const featuredProjects = projects.filter((project) => project.featured);
@@ -40,37 +52,33 @@ function Home() {
           Ironhack Web Development Bootcamp graduate (400+ hours). Based in Porto, Portugal. Open to remote and international roles.
         </p>
 
+        {/* Quick Skills Overview (above CTA buttons) */}
+        <div className="skills-preview" aria-labelledby="skills-heading">
+          <h2 id="skills-heading" className="skills-title">Technologies I Work With</h2>
+          <ul className="skills-grid" aria-label="Technical skills">
+            {technologies.map((tech) => (
+              <li key={tech.name} className="skill-item">
+                <img
+                  src={tech.icon}
+                  alt=""
+                  className="skill-icon"
+                  style={tech.invert ? { filter: 'brightness(0) invert(1)' } : undefined}
+                />
+                <span className="skill-name">{tech.name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Call to Action Buttons */}
         <div className="hero-buttons">
-          <Link to="/projects" className="btn btn-primary">
+          <Link to="/projects" className="btn btn-primary hero-cta-btn">
             View Projects
           </Link>
-          <Link to="/contact" className="btn btn-secondary">
+          <Link to="/contact" className="btn btn-secondary hero-cta-btn">
             Contact Me
           </Link>
-          <a href="https://github.com/wai-coding" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/luiscastrocoding/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-            LinkedIn
-          </a>
         </div>
-      </section>
-
-      {/* Quick Skills Overview */}
-      <section className="skills-preview" aria-labelledby="skills-heading">
-        <h2 id="skills-heading" className="skills-title">Technologies I Work With</h2>
-        <ul className="skills-list" aria-label="Technical skills">
-          <li className="skill-item">React</li>
-          <li className="skill-item">JavaScript</li>
-          <li className="skill-item">Node.js</li>
-          <li className="skill-item">Express.js</li>
-          <li className="skill-item">MongoDB</li>
-          <li className="skill-item">REST API</li>
-          <li className="skill-item">JWT Authentication</li>
-          <li className="skill-item">Git & GitHub</li>
-          <li className="skill-item">HTML & CSS</li>
-        </ul>
       </section>
 
       {/* Featured Projects Section */}
@@ -90,6 +98,7 @@ function Home() {
                 liveLink={project.liveLink}
                 image={project.image}
                 isFeatured={true}
+                startYear={project.startYear}
               />
             ))}
           </div>
@@ -112,6 +121,7 @@ function Home() {
                 serverRepo={project.serverRepo}
                 liveLink={project.liveLink}
                 image={project.image}
+                startYear={project.startYear}
               />
             ))}
           </div>
