@@ -16,7 +16,7 @@ function Contact() {
       <div className="contact-container">
         {/* Page Header */}
         <h1 className="page-title">Get In Touch</h1>
-        <p className="page-subtitle">
+        <p className="projects-description">
           Open to Junior Frontend or Full-Stack opportunities (remote or hybrid).
           Porto, Portugal, available worldwide. The fastest way to reach me is email or LinkedIn.
         </p>

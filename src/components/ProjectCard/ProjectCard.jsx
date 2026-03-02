@@ -50,8 +50,9 @@ function ProjectCard({ slug, title, description, techStack, clientRepo, serverRe
       <div className="project-content">
         <div className="project-header">
           <h3 className="project-title">
-            <Link to={`/projects/${slug}`} className="project-title-link">{title}{startYear ? ` (${startYear})` : ''}</Link>
+            <Link to={`/projects/${slug}`} className="project-title-link">{title}</Link>
           </h3>
+          {startYear && <span className="project-year">{startYear}</span>}
         </div>
         
         <div className="project-card-top">
