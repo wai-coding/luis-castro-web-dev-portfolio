@@ -7,7 +7,7 @@ function About() {
 
         {/* Page Header */}
         <h1 className="page-title">About Me</h1>
-        <p className="projects-description">
+        <p className="page-description">
           A structured and system-oriented Junior Full Stack Developer with a background in technology-driven creative fields. Focused on building scalable applications using modern JavaScript technologies and clean architecture principles.
         </p>
 

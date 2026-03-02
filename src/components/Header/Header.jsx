@@ -44,7 +44,7 @@ function Header() {
                 className={`nav-link ${currentPath === '/about' ? 'active' : ''}`}
                 aria-current={currentPath === '/about' ? 'page' : undefined}
               >
-                About
+                About Me
               </Link>
             </li>
             <li>

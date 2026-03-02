@@ -138,6 +138,19 @@ button {
   color: var(--color-primary);
 }
 
+/* Reusable page description */
+.page-description {
+  font-size: 0.925rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  width: 100%;
+}
+
 /* Utility class for screen readers only */
 .sr-only {
   position: absolute;

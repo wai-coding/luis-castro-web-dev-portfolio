@@ -22,19 +22,6 @@
   letter-spacing: -0.02em;
 }
 
-/* Projects Description - Explicitly Centered */
-.projects-description {
-  font-size: 0.925rem;
-  color: var(--muted);
-  text-align: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-  width: 100%;
-}
-
 /* Filters Toggle & Panel */
 .filters-wrapper {
   text-align: center;
