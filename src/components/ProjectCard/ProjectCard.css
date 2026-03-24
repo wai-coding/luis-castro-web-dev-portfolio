@@ -21,7 +21,7 @@
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.05);
+  transform: scale(calc(var(--card-zoom, 1) * 1.03));
 }
 
 /* Project Image Link */
@@ -55,7 +55,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1);
+  transform: scale(var(--card-zoom, 1));
   transition: opacity var(--transition-fast), transform var(--transition-base);
 }
 
@@ -342,11 +342,6 @@
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px var(--accent-soft);
-}
-
-/* Dancefloor Defender: show bottom of image */
-.project-card[data-slug="dancefloor-defender"] .project-image img {
-  object-position: bottom;
 }
 
 /* ===================

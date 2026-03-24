@@ -1,18 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
-import projects from '../../data/projects';
+import { useProjects } from '../../contexts/ProjectsContext';
 import './ProjectDetails.css';
 
-/**
- * ProjectDetails Page Component
- * -----------------------------
- * Displays full details of a single project.
- * Reads the slug from the URL and finds the matching project.
- * Shows complete description, key features, learning highlights,
- * tech stack, and action buttons.
- */
 function ProjectDetails() {
   const { slug } = useParams();
+  const { projects, loading } = useProjects();
   const project = projects.find((p) => p.slug === slug);
+
+  if (loading) return null;
 
   // Project not found
   if (!project) {
@@ -38,32 +33,35 @@ function ProjectDetails() {
       <div className="project-details-container">
         {/* Project Header */}
         <header className="details-header">
-          <div className="details-title-row">
-            <h1 className="details-title">{project.title}</h1>
-            {project.featured && project.slug !== 'dnb-hub' && (
-              <span className="details-badge">Main Project, Full Stack</span>
-            )}
-          </div>
+          <h1 className="details-title">{project.title}</h1>
           {project.startYear && (
             <p className="details-year">{project.startYear}</p>
           )}
         </header>
 
         {/* Project Image */}
-        {project.image && (
+        {project.image?.src && (
           <div className="details-image-container">
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-detail-image-link"
-            >
+            {project.liveLink ? (
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-detail-image-link"
+              >
+                <img 
+                  src={project.image.src} 
+                  alt={`${project.title} screenshot`}
+                  className="project-image-full"
+                />
+              </a>
+            ) : (
               <img 
-                src={project.image} 
+                src={project.image.src} 
                 alt={`${project.title} screenshot`}
                 className="project-image-full"
               />
-            </a>
+            )}
           </div>
         )}
 
@@ -108,35 +106,41 @@ function ProjectDetails() {
           </div>
         </section>
 
-        {/* Action Buttons */}
-        <section className="details-actions">
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.clientRepo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary"
-          >
-            Frontend Repo
-          </a>
-          {project.serverRepo && (
-            <a
-              href={project.serverRepo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-            >
-              Backend Repo
-            </a>
-          )}
-        </section>
+        {/* Action Buttons - only if at least one link exists */}
+        {(project.liveLink || project.clientRepo || project.serverRepo) && (
+          <section className="details-actions">
+            {project.liveLink && (
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Live Demo
+              </a>
+            )}
+            {project.clientRepo && (
+              <a
+                href={project.clientRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                {project.clientRepo && project.serverRepo ? 'Frontend Repo' : 'GitHub Repo'}
+              </a>
+            )}
+            {project.serverRepo && (
+              <a
+                href={project.serverRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                Backend Repo
+              </a>
+            )}
+          </section>
+        )}
 
         {/* Back Link */}
         <div className="details-back">

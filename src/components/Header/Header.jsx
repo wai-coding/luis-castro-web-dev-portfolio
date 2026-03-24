@@ -1,60 +1,63 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useNavigationGuard } from '../../contexts/NavigationGuardContext';
 import './Header.css';
 
-/**
- * Header Component
- * ----------------
- * Main navigation header that appears on all pages.
- * Uses React Router's Link component for client-side navigation.
- * 
- * The useLocation hook highlights the current active page in the nav.
- */
+function GuardedLink({ to, children, ...props }) {
+  const { canNavigate } = useNavigationGuard();
+
+  const handleClick = (e) => {
+    if (!canNavigate()) {
+      e.preventDefault();
+    }
+  };
+
+  return <Link to={to} onClick={handleClick} {...props}>{children}</Link>;
+}
+
 function Header() {
-  // Get current URL path to highlight active nav link
   const location = useLocation();
   const currentPath = location.pathname;
 
   return (
     <header className="header">
       <div className="header-container">
-        {/* Main Navigation */}
         <nav className="nav">
           <ul className="nav-list">
             <li>
-              <Link 
+              <GuardedLink 
                 to="/" 
                 className={`nav-link ${currentPath === '/' ? 'active' : ''}`}
                 aria-current={currentPath === '/' ? 'page' : undefined}
               >
                 Home
-              </Link>
+              </GuardedLink>
             </li>
             <li>
-              <Link 
+              <GuardedLink 
                 to="/projects" 
                 className={`nav-link ${currentPath === '/projects' ? 'active' : ''}`}
                 aria-current={currentPath === '/projects' ? 'page' : undefined}
               >
                 Projects
-              </Link>
+              </GuardedLink>
             </li>
             <li>
-              <Link 
+              <GuardedLink 
                 to="/about" 
                 className={`nav-link ${currentPath === '/about' ? 'active' : ''}`}
                 aria-current={currentPath === '/about' ? 'page' : undefined}
               >
                 About Me
-              </Link>
+              </GuardedLink>
             </li>
             <li>
-              <Link 
+              <GuardedLink 
                 to="/contact" 
                 className={`nav-link ${currentPath === '/contact' ? 'active' : ''}`}
                 aria-current={currentPath === '/contact' ? 'page' : undefined}
               >
                 Contact
-              </Link>
+              </GuardedLink>
             </li>
           </ul>
         </nav>

@@ -1,38 +1,24 @@
 import { useState } from 'react';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import projects from '../../data/projects';
+import { useProjects } from '../../contexts/ProjectsContext';
 import './Projects.css';
 
-/**
- * Projects Page Component
- * -----------------------
- * Displays all projects from the data file.
- * Includes filtering by technology stack.
- * 
- * HOW IT WORKS:
- * 1. Imports the projects array from data/projects.js
- * 2. Extracts unique tech tags for filter buttons
- * 3. Filters projects based on selected tech
- * 4. Renders a ProjectCard component for each filtered project
- * 
- * TO ADD A NEW PROJECT:
- * Simply edit the src/data/projects.js file - this page will 
- * automatically display any new projects you add there.
- * Tech tags are automatically extracted for the filter buttons.
- */
 function Projects() {
+  const { projects, loading } = useProjects();
   const [selectedTechs, setSelectedTechs] = useState([]);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
-  // Extract all unique tech tags from projects for filter buttons
+  const sorted = [...projects].sort((a, b) => (a.displayOrder || 999) - (b.displayOrder || 999));
   const allTechTags = [...new Set(projects.flatMap((project) => project.techStack))].sort();
 
-  // Filter projects: AND logic — show projects matching ALL selected techs
+  // Filter projects: AND logic - show projects matching ALL selected techs
   const filteredProjects = selectedTechs.length === 0
-    ? projects
-    : projects.filter((project) =>
+    ? sorted
+    : sorted.filter((project) =>
         selectedTechs.every((tech) => project.techStack.includes(tech))
       );
+
+  if (loading) return null;
 
   const toggleTech = (tech) => {
     setSelectedTechs((prev) =>
@@ -94,16 +80,7 @@ function Projects() {
           {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}
-              slug={project.slug}
-              title={project.title}
-              description={project.shortDescription}
-              techStack={project.techStack}
-              clientRepo={project.clientRepo}
-              serverRepo={project.serverRepo}
-              liveLink={project.liveLink}
-              image={project.image}
-              isFeatured={project.featured}
-              startYear={project.startYear}
+              project={project}
             />
           ))}
         </div>

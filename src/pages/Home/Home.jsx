@@ -1,15 +1,8 @@
 import { Link } from 'react-router-dom';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import projects from '../../data/projects';
+import { useProjects } from '../../contexts/ProjectsContext';
 import './Home.css';
 
-/**
- * Home Page Component
- * -------------------
- * The landing page of the portfolio.
- * Contains a hero section with introduction and call-to-action buttons.
- * Also displays featured projects from the projects data.
- */
 const technologies = [
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
   { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
@@ -23,10 +16,13 @@ const technologies = [
 ];
 
 function Home() {
-  // Filter projects that have featured: true
-  const featuredProjects = projects.filter((project) => project.featured);
-  // Filter projects that are not featured
-  const moreProjects = projects.filter((project) => !project.featured);
+  const { projects, loading } = useProjects();
+
+  const sortByOrder = (a, b) => (a.displayOrder || 999) - (b.displayOrder || 999);
+  const featuredProjects = projects.filter((p) => p.featured).sort(sortByOrder);
+  const moreProjects = projects.filter((p) => !p.featured).sort(sortByOrder);
+
+  if (loading) return null;
 
   return (
     <main className="home">
@@ -89,16 +85,7 @@ function Home() {
             {featuredProjects.map((project) => (
               <ProjectCard
                 key={project.id}
-                slug={project.slug}
-                title={project.title}
-                description={project.shortDescription}
-                techStack={project.techStack}
-                clientRepo={project.clientRepo}
-                serverRepo={project.serverRepo}
-                liveLink={project.liveLink}
-                image={project.image}
-                isFeatured={true}
-                startYear={project.startYear}
+                project={project}
               />
             ))}
           </div>
@@ -113,15 +100,7 @@ function Home() {
             {moreProjects.map((project) => (
               <ProjectCard
                 key={project.id}
-                slug={project.slug}
-                title={project.title}
-                description={project.shortDescription}
-                techStack={project.techStack}
-                clientRepo={project.clientRepo}
-                serverRepo={project.serverRepo}
-                liveLink={project.liveLink}
-                image={project.image}
-                startYear={project.startYear}
+                project={project}
               />
             ))}
           </div>

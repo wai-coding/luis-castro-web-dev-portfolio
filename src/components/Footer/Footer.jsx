@@ -1,13 +1,6 @@
 import './Footer.css';
 
-/**
- * Footer Component
- * ----------------
- * Simple footer with social links and copyright.
- * Appears at the bottom of all pages.
- */
 function Footer() {
-  // Get current year dynamically for copyright
   const currentYear = new Date().getFullYear();
 
   return (
