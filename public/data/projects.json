@@ -80,6 +80,47 @@
     ]
   },
   {
+    "id": 6,
+    "slug": "website-maker-pro",
+    "title": "Website Maker Pro",
+    "startYear": 2026,
+    "description": "Interactive web tool for generating business website demos from a configurable form. It supports multiple business categories, reusable landing-page sections, style variations, local saves, shareable URLs, and briefing export, making it useful for quickly presenting tailored website concepts to different clients.",
+    "shortDescription": "Website demo generator that creates tailored business landing pages with real-time preview, reusable sections, and shareable configurations.",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "localStorage"
+    ],
+    "clientRepo": "",
+    "serverRepo": "",
+    "liveLink": "https://website-maker-pro.vercel.app/",
+    "image": {
+      "src": "/projects/website-maker-pro/cover.png",
+      "cardPositionX": 100,
+      "cardPositionY": 50,
+      "cardZoom": 1
+    },
+    "featured": true,
+    "displayOrder": 3,
+    "keyFeatures": [
+      "Real-time website preview driven by a configurable business form",
+      "Multiple business categories with reusable section-based templates",
+      "Style variants and content customization for tailored website demos",
+      "Shareable demo URLs using query parameters",
+      "Local save/load flow and briefing export for presentation-ready handoff"
+    ],
+    "learningHighlights": [
+      "Built a configuration-driven UI instead of a standard CRUD application",
+      "Structured reusable page sections for multiple business scenarios",
+      "Worked with URL state, localStorage persistence, and export flows",
+      "Strengthened TypeScript component architecture in a template-based project",
+      "Improved UX thinking around preview, customization, and client presentation workflows"
+    ]
+  },
+  {
     "id": 2,
     "slug": "foundit",
     "title": "FoundIt",
@@ -104,7 +145,7 @@
       "cardZoom": 1
     },
     "featured": false,
-    "displayOrder": 3,
+    "displayOrder": 4,
     "keyFeatures": [
       "Search, multi-filtering and sorting",
       "Pagination with consistent UX on filter changes",
@@ -138,7 +179,7 @@
       "cardZoom": 1
     },
     "featured": false,
-    "displayOrder": 4,
+    "displayOrder": 5,
     "keyFeatures": [
       "Progressive difficulty and level ramp",
       "Multiple enemy types and distinct behaviors",
@@ -172,7 +213,7 @@
       "cardZoom": 1
     },
     "featured": false,
-    "displayOrder": 5,
+    "displayOrder": 6,
     "keyFeatures": [
       "Full legal move generation with check, pin, castling, en passant, and promotion",
       "Checkmate, stalemate, draw detection, and move validation",
