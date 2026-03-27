@@ -228,5 +228,116 @@
       "Improved reasoning around edge cases and move validation",
       "Strengthened TypeScript problem-solving in a logic-heavy project"
     ]
+  },
+  {
+    "id": 8,
+    "slug": "funmachine-synth",
+    "title": "FunMachine Synth",
+    "startYear": 2021,
+    "description": "FM synthesizer created in Max MSP as a custom sound design instrument. The project focuses on frequency modulation synthesis, giving control over core synthesis parameters to generate a wide range of tones, textures, and timbral variations.",
+    "shortDescription": "FM synthesizer built in Max MSP to explore sound synthesis, modulation, and custom instrument design.",
+    "techStack": [
+      "Max MSP",
+      "FM Synthesis",
+      "Sound Design",
+      "Audio Programming"
+    ],
+    "clientRepo": "",
+    "serverRepo": "",
+    "liveLink": "https://www.youtube.com/watch?v=EpKDqcKoFFY",
+    "image": {
+      "src": "/projects/funmachine-synth/cover.jpg",
+      "cardPositionX": 50,
+      "cardPositionY": 50,
+      "cardZoom": 1
+    },
+    "featured": false,
+    "displayOrder": 7,
+    "keyFeatures": [
+      "Custom FM synthesis architecture built in Max MSP",
+      "Real-time control of modulation and timbre-shaping parameters",
+      "Wide sonic range from clean tones to complex textured sounds",
+      "Instrument-oriented interface for live experimentation and sound design"
+    ],
+    "learningHighlights": [
+      "Built a synthesis tool from scratch instead of using a prebuilt instrument",
+      "Deepened understanding of FM synthesis and modulation behaviour",
+      "Improved audio programming logic through parameter-driven sound generation",
+      "Strengthened experience in designing interactive digital instruments"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "sound-escapes",
+    "title": "Sound(E)scapes",
+    "startYear": 2021,
+    "description": "Interactive sound installation developed in Max MSP to create an immersive listening experience through spatial movement. Four different real-world soundscapes are triggered when someone enters specific areas, while movement between zones blends those environments with added effects, transforming them into hybrid and unreal soundscapes.",
+    "shortDescription": "Interactive Max MSP sound installation that blends real-world soundscapes based on the listener’s position.",
+    "techStack": [
+      "Max MSP",
+      "Interactive Audio",
+      "Sound Design",
+      "Spatial Interaction"
+    ],
+    "clientRepo": "",
+    "serverRepo": "",
+    "liveLink": "https://www.youtube.com/watch?v=ZXrFoFI5MLk",
+    "image": {
+      "src": "/projects/sound-escapes/cover.jpg",
+      "cardPositionX": 50,
+      "cardPositionY": 50,
+      "cardZoom": 1
+    },
+    "featured": false,
+    "displayOrder": 8,
+    "keyFeatures": [
+      "Position-based triggering of four independent soundscapes",
+      "Dynamic blending between zones for hybrid sound transitions",
+      "Effect processing to transform realistic ambiences into unreal textures",
+      "Immersive installation-style interaction driven by physical movement"
+    ],
+    "learningHighlights": [
+      "Designed an interactive audio system based on spatial behaviour",
+      "Worked with layered sound environments and real-time transitions",
+      "Explored immersive sound design beyond traditional linear playback",
+      "Strengthened creative coding skills in Max MSP for interactive installations"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "step-sequencer-max-msp",
+    "title": "Step-Sequencer",
+    "startYear": 2021,
+    "description": "Experimental melodic and rhythmic step sequencer developed in Max MSP and controlled through camera input. The system tracks physical objects placed in view of the camera and uses that interaction to drive sequencing behaviour, turning a simple physical setup into a playful audio-control interface.",
+    "shortDescription": "Camera-controlled melodic and rhythmic step sequencer built in Max MSP using physical object interaction.",
+    "techStack": [
+      "Max MSP",
+      "Computer Vision",
+      "Interactive Audio",
+      "Sequencing"
+    ],
+    "clientRepo": "",
+    "serverRepo": "",
+    "liveLink": "https://www.youtube.com/watch?v=ylfUY-US8m4",
+    "image": {
+      "src": "/projects/step-sequencer-max-msp/cover.jpg",
+      "cardPositionX": 50,
+      "cardPositionY": 50,
+      "cardZoom": 1
+    },
+    "featured": false,
+    "displayOrder": 9,
+    "keyFeatures": [
+      "Melodic and rhythmic sequencing controlled through camera input",
+      "Physical object interaction used as a playful control surface",
+      "Real-time mapping between movement and musical output",
+      "Combination of sequencing logic with experimental interface design"
+    ],
+    "learningHighlights": [
+      "Connected visual input with musical sequencing in real time",
+      "Explored alternative human-computer interaction through physical objects",
+      "Built rule-based sequencing behaviour inside Max MSP",
+      "Strengthened problem-solving across sound, interaction, and system design"
+    ]
   }
 ]
