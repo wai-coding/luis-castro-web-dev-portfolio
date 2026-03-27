@@ -339,5 +339,45 @@
       "Built rule-based sequencing behaviour inside Max MSP",
       "Strengthened problem-solving across sound, interaction, and system design"
     ]
+  },
+  {
+    "id": 10,
+    "slug": "bounce-game-p5-javascript",
+    "title": "Bounce (p5.js)",
+    "startYear": 2018,
+    "description": "Browser-based recreation of my original Java/Processing arcade game, converted to p5.js for the web. The project keeps the core collision-based gameplay while adapting the original visual and audio assets to a browser-friendly version, with score and lives progression, increasing speed, and an additional missile hazard unlocked during longer runs.",
+    "shortDescription": "p5.js web version of my original Java/Processing arcade game, with collision-based gameplay, score progression, and adapted assets.",
+    "techStack": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "p5.js",
+      "p5.sound",
+      "Game Logic"
+    ],
+    "clientRepo": "https://github.com/wai-coding/bounce-game-p5-javascript",
+    "serverRepo": "https://github.com/wai-coding/bounce-game-java-processing",
+    "liveLink": "https://wai-coding.github.io/bounce-game-p5-javascript/",
+    "image": {
+      "src": "/projects/bounce-game-p5-javascript/cover.png",
+      "cardPositionX": 50,
+      "cardPositionY": 86,
+      "cardZoom": 1.04
+    },
+    "featured": false,
+    "displayOrder": 10,
+    "keyFeatures": [
+      "2D arcade gameplay recreated for the browser with p5.js",
+      "Score and lives system with progressive speed scaling",
+      "Missile hazard introduced after reaching a score threshold",
+      "Music and sound effect toggles through keyboard and HUD controls",
+      "Original visual and audio assets adapted from the earlier Processing version"
+    ],
+    "learningHighlights": [
+      "Converted an earlier Java/Processing game into a browser-based p5.js project",
+      "Adapted game logic, controls, and assets to a lightweight web setup",
+      "Practiced collision handling, progression balancing, and browser-based audio integration",
+      "Strengthened experience in translating an existing project into a web-friendly version"
+    ]
   }
 ]
