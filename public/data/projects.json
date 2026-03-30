@@ -379,5 +379,45 @@
       "Practiced collision handling, progression balancing, and browser-based audio integration",
       "Strengthened experience in translating an existing project into a web-friendly version"
     ]
+  },
+  {
+    "id": 11,
+    "slug": "audio-reactive-visualizer",
+    "title": "Audio Reactive Visualizer",
+    "startYear": 2019,
+    "description": "Browser-based p5.js adaptation of my original Java/Processing audio-reactive visualizer. The project combines reactive generative visuals with interactive playback controls, custom track loading, loop-region editing, and browser-friendly audio analysis to turn a Processing sketch into a more accessible web experience.",
+    "shortDescription": "p5.js web adaptation of my original Java/Processing audio-reactive visualizer, with interactive playback controls and loopable reactive visuals.",
+    "techStack": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "p5.js",
+      "p5.sound",
+      "Creative Coding"
+    ],
+    "clientRepo": "https://github.com/wai-coding/audio-reactive-visualizer",
+    "serverRepo": "https://github.com/wai-coding/audio-reactive-visualizer-java-processing",
+    "liveLink": "https://wai-coding.github.io/audio-reactive-visualizer/",
+    "image": {
+      "src": "/projects/audio-reactive-visualizer/cover.png",
+      "cardPositionX": 48,
+      "cardPositionY": 50,
+      "cardZoom": 1
+    },
+    "featured": false,
+    "displayOrder": 11,
+    "keyFeatures": [
+      "Audio-reactive visuals driven by waveform, amplitude, and peak changes",
+      "Interactive player with play/pause, restart, volume, and seek controls",
+      "Support for bundled demo audio and user-selected local tracks",
+      "Loop mode with draggable start and end markers",
+      "Fullscreen browser canvas optimized for lightweight deployment"
+    ],
+    "learningHighlights": [
+      "Adapted an earlier Java/Processing project into a browser-based p5.js experience",
+      "Worked with audio analysis, waveform rendering, and reactive visual behaviour",
+      "Designed a more complete playback UI instead of a simple visual sketch",
+      "Strengthened experience in translating creative coding work into a deployable web format"
+    ]
   }
 ]
