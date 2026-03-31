@@ -116,7 +116,7 @@ function ProjectDetails() {
                 rel="noopener noreferrer"
                 className="btn btn-primary"
               >
-                Live Demo
+                {(project.liveLinkLabel && project.liveLinkLabel.trim()) || 'Live Demo'}
               </a>
             )}
             {project.clientRepo && (
@@ -126,7 +126,7 @@ function ProjectDetails() {
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
               >
-                {project.clientRepo && project.serverRepo ? 'Frontend Repo' : 'GitHub Repo'}
+                {(project.clientRepoLabel && project.clientRepoLabel.trim()) || (project.clientRepo && project.serverRepo ? 'Frontend Repo' : 'GitHub Repo')}
               </a>
             )}
             {project.serverRepo && (
@@ -136,7 +136,7 @@ function ProjectDetails() {
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
               >
-                Backend Repo
+                {(project.serverRepoLabel && project.serverRepoLabel.trim()) || 'Backend Repo'}
               </a>
             )}
           </section>

@@ -18,7 +18,9 @@ app.use(express.json());
 
 const ALLOWED_FIELDS = [
   'title', 'startYear', 'description', 'shortDescription', 'techStack',
-  'clientRepo', 'serverRepo', 'liveLink', 'image', 'featured',
+  'clientRepo', 'serverRepo', 'liveLink',
+  'liveLinkLabel', 'clientRepoLabel', 'serverRepoLabel',
+  'image', 'featured',
   'keyFeatures', 'learningHighlights'
 ];
 
@@ -47,7 +49,7 @@ function pickAllowed(body) {
     if (body[key] !== undefined) result[key] = body[key];
   }
   // Sanitize strings
-  const stringFields = ['title', 'description', 'shortDescription', 'clientRepo', 'serverRepo', 'liveLink'];
+  const stringFields = ['title', 'description', 'shortDescription', 'clientRepo', 'serverRepo', 'liveLink', 'liveLinkLabel', 'clientRepoLabel', 'serverRepoLabel'];
   for (const key of stringFields) {
     if (result[key] !== undefined) {
       result[key] = typeof result[key] === 'string' ? result[key].trim() : '';
@@ -146,6 +148,9 @@ app.post('/api/projects', (req, res) => {
       clientRepo: allowed.clientRepo || '',
       serverRepo: allowed.serverRepo || '',
       liveLink: allowed.liveLink || '',
+      liveLinkLabel: allowed.liveLinkLabel || '',
+      clientRepoLabel: allowed.clientRepoLabel || '',
+      serverRepoLabel: allowed.serverRepoLabel || '',
       image: allowed.image || { src: '', cardPositionX: 50, cardPositionY: 50, cardZoom: 1 },
       featured: allowed.featured || false,
       displayOrder: maxOrder + 1,

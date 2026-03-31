@@ -9,7 +9,9 @@ function ProjectCard({ project }) {
   const hasLiveLink = liveLink && liveLink.trim();
   const hasClientRepo = clientRepo && clientRepo.trim();
   const hasServerRepo = serverRepo && serverRepo.trim();
-  const clientRepoLabel = hasClientRepo && hasServerRepo ? 'Frontend Repo' : 'GitHub Repo';
+  const liveLinkText = (project.liveLinkLabel && project.liveLinkLabel.trim()) || 'Live Demo';
+  const clientRepoText = (project.clientRepoLabel && project.clientRepoLabel.trim()) || (hasClientRepo && hasServerRepo ? 'Frontend Repo' : 'GitHub Repo');
+  const serverRepoText = (project.serverRepoLabel && project.serverRepoLabel.trim()) || 'Backend Repo';
 
   return (
     <article className="project-card" data-slug={slug}>
@@ -69,7 +71,7 @@ function ProjectCard({ project }) {
                   rel="noopener noreferrer"
                   className="project-link demo-link"
                 >
-                  Live Demo
+                  {liveLinkText}
                 </a>
               )}
               {hasClientRepo && (
@@ -79,7 +81,7 @@ function ProjectCard({ project }) {
                   rel="noopener noreferrer"
                   className="project-link github-link"
                 >
-                  {clientRepoLabel}
+                  {clientRepoText}
                 </a>
               )}
               {hasServerRepo && (
@@ -89,7 +91,7 @@ function ProjectCard({ project }) {
                   rel="noopener noreferrer"
                   className="project-link server-link"
                 >
-                  Backend Repo
+                  {serverRepoText}
                 </a>
               )}
             </div>

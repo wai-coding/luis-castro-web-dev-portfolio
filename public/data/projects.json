@@ -20,6 +20,9 @@
     "clientRepo": "https://github.com/wai-coding/dnb-hub-client",
     "serverRepo": "https://github.com/wai-coding/dnb-hub-server",
     "liveLink": "https://dnbhub.netlify.app/",
+    "liveLinkLabel": "Live Demo",
+    "clientRepoLabel": "Frontend Repo",
+    "serverRepoLabel": "Backend Repo",
     "image": {
       "src": "/projects/dnb-hub/cover.png",
       "cardPositionX": 72,
@@ -56,6 +59,9 @@
     "clientRepo": "https://github.com/wai-coding/inspectorepo",
     "serverRepo": "",
     "liveLink": "https://inspectorepo.vercel.app/",
+    "liveLinkLabel": "Live Demo",
+    "clientRepoLabel": "GitHub Repo",
+    "serverRepoLabel": "",
     "image": {
       "src": "/projects/inspectorepo/cover.png",
       "cardPositionX": 50,
@@ -97,6 +103,9 @@
     "clientRepo": "",
     "serverRepo": "",
     "liveLink": "https://website-maker-pro.vercel.app/",
+    "liveLinkLabel": "Live Demo",
+    "clientRepoLabel": "",
+    "serverRepoLabel": "",
     "image": {
       "src": "/projects/website-maker-pro/cover.png",
       "cardPositionX": 100,
@@ -138,6 +147,9 @@
     "clientRepo": "https://github.com/wai-coding/foundit-app",
     "serverRepo": "https://github.com/wai-coding/json-server-backend",
     "liveLink": "https://foundit-app.netlify.app/",
+    "liveLinkLabel": "Live Demo",
+    "clientRepoLabel": "Frontend Repo",
+    "serverRepoLabel": "Backend Repo",
     "image": {
       "src": "/projects/foundit/cover.png",
       "cardPositionX": 50,
@@ -172,6 +184,9 @@
     "clientRepo": "https://github.com/wai-coding/dancefloor-defender",
     "serverRepo": "",
     "liveLink": "https://wai-coding.github.io/dancefloor-defender/",
+    "liveLinkLabel": "Live Demo",
+    "clientRepoLabel": "GitHub Repo",
+    "serverRepoLabel": "",
     "image": {
       "src": "/projects/dancefloor-defender/cover.png",
       "cardPositionX": 50,
@@ -206,6 +221,9 @@
     "clientRepo": "https://github.com/wai-coding/chess-game-typescript",
     "serverRepo": "",
     "liveLink": "https://chess-game-pro.netlify.app/",
+    "liveLinkLabel": "Live Demo",
+    "clientRepoLabel": "GitHub Repo",
+    "serverRepoLabel": "",
     "image": {
       "src": "/projects/chess-game-typescript/cover.png",
       "cardPositionX": 50,
@@ -245,6 +263,9 @@
     "clientRepo": "",
     "serverRepo": "",
     "liveLink": "https://www.youtube.com/watch?v=EpKDqcKoFFY",
+    "liveLinkLabel": "",
+    "clientRepoLabel": "",
+    "serverRepoLabel": "",
     "image": {
       "src": "/projects/funmachine-synth/cover.jpg",
       "cardPositionX": 50,
@@ -282,6 +303,9 @@
     "clientRepo": "",
     "serverRepo": "",
     "liveLink": "https://www.youtube.com/watch?v=ZXrFoFI5MLk",
+    "liveLinkLabel": "",
+    "clientRepoLabel": "",
+    "serverRepoLabel": "",
     "image": {
       "src": "/projects/sound-escapes/cover.jpg",
       "cardPositionX": 50,
@@ -319,6 +343,9 @@
     "clientRepo": "",
     "serverRepo": "",
     "liveLink": "https://www.youtube.com/watch?v=ylfUY-US8m4",
+    "liveLinkLabel": "",
+    "clientRepoLabel": "",
+    "serverRepoLabel": "",
     "image": {
       "src": "/projects/step-sequencer-max-msp/cover.jpg",
       "cardPositionX": 50,
@@ -341,46 +368,6 @@
     ]
   },
   {
-    "id": 10,
-    "slug": "bounce-game-p5-javascript",
-    "title": "Bounce (p5.js)",
-    "startYear": 2018,
-    "description": "Browser-based recreation of my original Java/Processing arcade game, converted to p5.js for the web. The project keeps the core collision-based gameplay while adapting the original visual and audio assets to a browser-friendly version, with score and lives progression, increasing speed, and an additional missile hazard unlocked during longer runs.",
-    "shortDescription": "p5.js web version of my original Java/Processing arcade game, with collision-based gameplay, score progression, and adapted assets.",
-    "techStack": [
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "p5.js",
-      "p5.sound",
-      "Game Logic"
-    ],
-    "clientRepo": "https://github.com/wai-coding/bounce-game-p5-javascript",
-    "serverRepo": "https://github.com/wai-coding/bounce-game-java-processing",
-    "liveLink": "https://wai-coding.github.io/bounce-game-p5-javascript/",
-    "image": {
-      "src": "/projects/bounce-game-p5-javascript/cover.png",
-      "cardPositionX": 50,
-      "cardPositionY": 86,
-      "cardZoom": 1.04
-    },
-    "featured": false,
-    "displayOrder": 10,
-    "keyFeatures": [
-      "2D arcade gameplay recreated for the browser with p5.js",
-      "Score and lives system with progressive speed scaling",
-      "Missile hazard introduced after reaching a score threshold",
-      "Music and sound effect toggles through keyboard and HUD controls",
-      "Original visual and audio assets adapted from the earlier Processing version"
-    ],
-    "learningHighlights": [
-      "Converted an earlier Java/Processing game into a browser-based p5.js project",
-      "Adapted game logic, controls, and assets to a lightweight web setup",
-      "Practiced collision handling, progression balancing, and browser-based audio integration",
-      "Strengthened experience in translating an existing project into a web-friendly version"
-    ]
-  },
-  {
     "id": 11,
     "slug": "audio-reactive-visualizer",
     "title": "Audio Reactive Visualizer",
@@ -395,9 +382,12 @@
       "p5.sound",
       "Creative Coding"
     ],
-    "clientRepo": "https://github.com/wai-coding/audio-reactive-visualizer",
+    "clientRepo": "https://github.com/wai-coding/audio-reactive-visualizer-p5-javascript",
     "serverRepo": "https://github.com/wai-coding/audio-reactive-visualizer-java-processing",
-    "liveLink": "https://wai-coding.github.io/audio-reactive-visualizer/",
+    "liveLink": "https://wai-coding.github.io/audio-reactive-visualizer-p5-javascript/",
+    "liveLinkLabel": "Live Demo",
+    "clientRepoLabel": "p5.js Repo",
+    "serverRepoLabel": "Java Repo",
     "image": {
       "src": "/projects/audio-reactive-visualizer/cover.png",
       "cardPositionX": 48,
@@ -405,7 +395,7 @@
       "cardZoom": 1
     },
     "featured": false,
-    "displayOrder": 11,
+    "displayOrder": 10,
     "keyFeatures": [
       "Audio-reactive visuals driven by waveform, amplitude, and peak changes",
       "Interactive player with play/pause, restart, volume, and seek controls",
@@ -418,6 +408,49 @@
       "Worked with audio analysis, waveform rendering, and reactive visual behaviour",
       "Designed a more complete playback UI instead of a simple visual sketch",
       "Strengthened experience in translating creative coding work into a deployable web format"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "bounce-game",
+    "title": "Bounce",
+    "startYear": 2018,
+    "description": "Browser-based recreation of my original Java/Processing arcade game, converted to p5.js for the web. The project keeps the core collision-based gameplay while adapting the original visual and audio assets to a browser-friendly version, with score and lives progression, increasing speed, and an additional missile hazard unlocked during longer runs.",
+    "shortDescription": "p5.js web version of my original Java/Processing arcade game, with collision-based gameplay, score progression, and adapted assets.",
+    "techStack": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "p5.js",
+      "p5.sound",
+      "Game Logic"
+    ],
+    "clientRepo": "https://github.com/wai-coding/bounce-game-p5-javascript",
+    "serverRepo": "https://github.com/wai-coding/bounce-game-java-processing",
+    "liveLink": "https://wai-coding.github.io/bounce-game-p5-javascript/",
+    "liveLinkLabel": "Live Demo",
+    "clientRepoLabel": "p5.js Repo",
+    "serverRepoLabel": "Java Repo",
+    "image": {
+      "src": "/projects/bounce-game/cover.png",
+      "cardPositionX": 50,
+      "cardPositionY": 86,
+      "cardZoom": 1.04
+    },
+    "featured": false,
+    "displayOrder": 11,
+    "keyFeatures": [
+      "2D arcade gameplay recreated for the browser with p5.js",
+      "Score and lives system with progressive speed scaling",
+      "Missile hazard introduced after reaching a score threshold",
+      "Music and sound effect toggles through keyboard and HUD controls",
+      "Original visual and audio assets adapted from the earlier Processing version"
+    ],
+    "learningHighlights": [
+      "Converted an earlier Java/Processing game into a browser-based p5.js project",
+      "Adapted game logic, controls, and assets to a lightweight web setup",
+      "Practiced collision handling, progression balancing, and browser-based audio integration",
+      "Strengthened experience in translating an existing project into a web-friendly version"
     ]
   }
 ]

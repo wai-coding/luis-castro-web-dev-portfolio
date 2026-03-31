@@ -17,6 +17,9 @@ const emptyProject = {
   clientRepo: '',
   serverRepo: '',
   liveLink: '',
+  liveLinkLabel: '',
+  clientRepoLabel: '',
+  serverRepoLabel: '',
   image: { src: '', cardPositionX: 50, cardPositionY: 50, cardZoom: 1 },
   featured: false,
   keyFeatures: [],
@@ -512,14 +515,31 @@ function Admin() {
                       <input type="text" value={form.liveLink} onChange={e => updateField('liveLink', e.target.value)} placeholder="https://..." />
                     </div>
                     <div className="admin-field">
-                      <label>Client Repo (optional)</label>
-                      <input type="text" value={form.clientRepo} onChange={e => updateField('clientRepo', e.target.value)} placeholder="https://github.com/..." />
+                      <label>Live Link Label (optional)</label>
+                      <input type="text" value={form.liveLinkLabel || ''} onChange={e => updateField('liveLinkLabel', e.target.value)} placeholder="e.g. Live Demo" />
                     </div>
                   </div>
 
-                  <div className="admin-field">
-                    <label>Server Repo (optional)</label>
-                    <input type="text" value={form.serverRepo || ''} onChange={e => updateField('serverRepo', e.target.value)} placeholder="https://github.com/..." />
+                  <div className="admin-field-row">
+                    <div className="admin-field">
+                      <label>Client Repo (optional)</label>
+                      <input type="text" value={form.clientRepo} onChange={e => updateField('clientRepo', e.target.value)} placeholder="https://github.com/..." />
+                    </div>
+                    <div className="admin-field">
+                      <label>Client Repo Label (optional)</label>
+                      <input type="text" value={form.clientRepoLabel || ''} onChange={e => updateField('clientRepoLabel', e.target.value)} placeholder="e.g. Frontend Repo, Repo p5.js" />
+                    </div>
+                  </div>
+
+                  <div className="admin-field-row">
+                    <div className="admin-field">
+                      <label>Server Repo (optional)</label>
+                      <input type="text" value={form.serverRepo || ''} onChange={e => updateField('serverRepo', e.target.value)} placeholder="https://github.com/..." />
+                    </div>
+                    <div className="admin-field">
+                      <label>Server Repo Label (optional)</label>
+                      <input type="text" value={form.serverRepoLabel || ''} onChange={e => updateField('serverRepoLabel', e.target.value)} placeholder="e.g. Backend Repo, Repo Java/Processing" />
+                    </div>
                   </div>
 
                   {/* Arrays */}
