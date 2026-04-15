@@ -216,7 +216,8 @@
       "React",
       "Vite",
       "Vitest",
-      "CSS"
+      "CSS",
+      "Game Logic"
     ],
     "clientRepo": "https://github.com/wai-coding/chess-game-typescript",
     "serverRepo": "",
@@ -368,6 +369,51 @@
     ]
   },
   {
+    "id": 12,
+    "slug": "tetris-game",
+    "title": "Tetris",
+    "startYear": 2020,
+    "description": "Browser-based p5.js adaptation of my original Java/Processing Tetris game. The project recreates classic Tetris mechanics such as piece rotation, line clearing, scoring, and increasing difficulty, while adapting the original logic and gameplay loop to a lightweight web environment.",
+    "shortDescription": "p5.js web version of my original Java/Processing Tetris game, with classic mechanics, scoring, and increasing difficulty.",
+    "techStack": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "p5.js",
+      "Game Logic",
+      "Java",
+      "Processing"
+    ],
+    "clientRepo": "https://github.com/wai-coding/tetris-game-p5-javascript",
+    "serverRepo": "https://github.com/wai-coding/tetris-game-java-processing",
+    "liveLink": "https://wai-coding.github.io/tetris-game-p5-javascript/",
+    "liveLinkLabel": "",
+    "clientRepoLabel": "p5.js Repo",
+    "serverRepoLabel": "Java Repo",
+    "image": {
+      "src": "/projects/tetris-game/cover.png",
+      "cardPositionX": 50,
+      "cardPositionY": 100,
+      "cardZoom": 1.03
+    },
+    "featured": false,
+    "displayOrder": 10,
+    "keyFeatures": [
+      "Classic Tetris gameplay with piece rotation, movement, and collision handling",
+      "Line clearing system with score tracking",
+      "Progressive difficulty through increasing game speed",
+      "Game loop adapted for browser-based rendering with p5.js",
+      "Keyboard controls for responsive gameplay interaction"
+    ],
+    "learningHighlights": [
+      "Converted a grid-based game from Java/Processing into a browser-based p5.js project",
+      "Worked with collision detection and matrix/grid logic for piece placement",
+      "Implemented rotation and movement rules for Tetris pieces",
+      "Adapted game timing and difficulty scaling to a web environment",
+      "Strengthened problem-solving in game logic and state management"
+    ]
+  },
+  {
     "id": 11,
     "slug": "audio-reactive-visualizer",
     "title": "Audio Reactive Visualizer",
@@ -380,7 +426,9 @@
       "CSS",
       "p5.js",
       "p5.sound",
-      "Creative Coding"
+      "Creative Coding",
+      "Java",
+      "Processing"
     ],
     "clientRepo": "https://github.com/wai-coding/audio-reactive-visualizer-p5-javascript",
     "serverRepo": "https://github.com/wai-coding/audio-reactive-visualizer-java-processing",
@@ -395,7 +443,7 @@
       "cardZoom": 1
     },
     "featured": false,
-    "displayOrder": 10,
+    "displayOrder": 11,
     "keyFeatures": [
       "Audio-reactive visuals driven by waveform, amplitude, and peak changes",
       "Interactive player with play/pause, restart, volume, and seek controls",
@@ -423,7 +471,9 @@
       "CSS",
       "p5.js",
       "p5.sound",
-      "Game Logic"
+      "Game Logic",
+      "Java",
+      "Processing"
     ],
     "clientRepo": "https://github.com/wai-coding/bounce-game-p5-javascript",
     "serverRepo": "https://github.com/wai-coding/bounce-game-java-processing",
@@ -438,7 +488,7 @@
       "cardZoom": 1.04
     },
     "featured": false,
-    "displayOrder": 11,
+    "displayOrder": 12,
     "keyFeatures": [
       "2D arcade gameplay recreated for the browser with p5.js",
       "Score and lives system with progressive speed scaling",
