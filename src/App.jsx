@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { ProjectsProvider } from './contexts/ProjectsContext';
+import { SiteContentProvider } from './contexts/SiteContentContext';
 import { NavigationGuardProvider } from './contexts/NavigationGuardContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -16,11 +17,15 @@ const Admin = import.meta.env.DEV
   : null;
 
 function App() {
+  const location = useLocation();
+  const isAdmin = location.pathname === '/admin';
+
   return (
     <NavigationGuardProvider>
+    <SiteContentProvider>
     <ProjectsProvider>
       <div className="app">
-        <Header />
+        {!isAdmin && <Header />}
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,16 +35,17 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           {import.meta.env.DEV && Admin && (
             <Route path="/admin" element={
-              <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading admin...</div>}>
+              <Suspense fallback={<div className="admin-loading">Loading admin...</div>}>
                 <Admin />
               </Suspense>
             } />
           )}
         </Routes>
 
-        <Footer />
+        {!isAdmin && <Footer />}
       </div>
     </ProjectsProvider>
+    </SiteContentProvider>
     </NavigationGuardProvider>
   );
 }

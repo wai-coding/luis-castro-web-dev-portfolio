@@ -158,6 +158,10 @@
   white-space: nowrap;
 }
 
+.copy-feedback-error {
+  color: #e53e3e;
+}
+
 /* ===================
    MOBILE RESPONSIVE
    =================== */

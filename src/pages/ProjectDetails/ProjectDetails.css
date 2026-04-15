@@ -45,6 +45,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .project-image-full {
@@ -206,6 +207,37 @@
 .not-found {
   text-align: center;
   padding: 4rem 0;
+}
+
+/* Inline add buttons (editor mode only) */
+.inline-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.3rem 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted, #888);
+  background: transparent;
+  border: 1px dashed var(--border, #2a2b35);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.inline-add-btn:hover {
+  color: #818cf8;
+  border-color: rgba(99, 102, 241, 0.4);
+  background-color: rgba(99, 102, 241, 0.08);
+}
+
+.inline-add-btn-tag {
+  padding: 0.25rem 0.6rem;
+  margin-top: 0;
+  border-radius: var(--radius-full, 999px);
+  font-size: 0.8rem;
+  line-height: 1.4;
 }
 
 .not-found-title {

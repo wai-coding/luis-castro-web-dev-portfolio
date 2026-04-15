@@ -1,0 +1,154 @@
+/* Editable field - visible in editor mode */
+.editable-field {
+  cursor: pointer;
+  transition: outline 0.15s, background-color 0.15s;
+  border-radius: 3px;
+}
+
+.editable-field:hover {
+  outline: 1px dashed rgba(99, 102, 241, 0.5);
+  outline-offset: 2px;
+}
+
+.editable-highlight {
+  outline: 1px dashed rgba(99, 102, 241, 0.3);
+  outline-offset: 2px;
+}
+
+.editable-highlight:hover {
+  outline-color: rgba(99, 102, 241, 0.7);
+}
+
+/* Inline editing input */
+.editable-input {
+  font: inherit;
+  color: inherit;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.editable-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.editable-textarea {
+  resize: vertical;
+  min-height: 3em;
+}
+
+
+
+/* ================================= */
+/* Inline add button (editor mode)   */
+/* ================================= */
+.inline-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.3rem 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted, #888);
+  background: transparent;
+  border: 1px dashed var(--border, #2a2b35);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.inline-add-btn:hover {
+  color: #818cf8;
+  border-color: rgba(99, 102, 241, 0.4);
+  background-color: rgba(99, 102, 241, 0.08);
+}
+
+.inline-add-btn-tag {
+  padding: 0.15rem 0.5rem;
+  margin-top: 0;
+  border-radius: var(--radius-full, 999px);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+/* ================================= */
+/* Project image edit button         */
+/* ================================= */
+.project-image-edit-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 5;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background-color: rgba(15, 17, 23, 0.85);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background-color 0.15s, color 0.15s;
+  pointer-events: auto;
+}
+
+.project-image-edit-btn:hover {
+  background-color: rgba(15, 17, 23, 0.95);
+  color: #c7d2fe;
+  border-color: rgba(99, 102, 241, 0.6);
+}
+
+.project-image-edit-btn-details {
+  bottom: auto;
+  top: 8px;
+}
+
+/* ================================= */
+/* Project settings button           */
+/* ================================= */
+.project-settings-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 5;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background-color: rgba(15, 17, 23, 0.85);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background-color 0.15s, color 0.15s;
+  pointer-events: auto;
+}
+
+.project-settings-btn:hover {
+  background-color: rgba(15, 17, 23, 0.95);
+  color: #c7d2fe;
+  border-color: rgba(99, 102, 241, 0.6);
+}
+
+.project-settings-btn-details {
+  position: relative;
+  top: auto;
+  left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 0.5rem;
+}
+
+/* ================================= */
+

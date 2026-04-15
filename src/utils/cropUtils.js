@@ -1,6 +1,4 @@
-/**
- * Shared crop/viewport utilities used by both Admin editor and public ProjectCard.
- */
+// Crop/viewport utilities for the Admin editor and ProjectCard.
 
 export const CARD_ASPECT_RATIO = 300 / 140;
 
@@ -14,10 +12,7 @@ export function normalizeSlug(value) {
     .replace(/^-|-$/g, '');
 }
 
-/**
- * Compute the base visible fractions and drag range for the card crop.
- * Shared between the viewport overlay and the drag handler.
- */
+// Visible fractions and drag range for the card crop.
 export function computeCropParams(imgDimensions) {
   if (!imgDimensions) return null;
   const imageAR = imgDimensions.w / imgDimensions.h;

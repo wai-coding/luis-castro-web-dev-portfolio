@@ -1,38 +1,75 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useSiteContent } from '../../contexts/SiteContentContext';
+import EditableText from '../../components/Editable/EditableText';
 import './Contact.css';
 
-/**
- * Contact Page Component
- * ----------------------
- * Simple contact section with email and social links.
- * No backend required - just direct links.
- *
- * Uses inline SVG icons to avoid extra dependencies.
- */
 function Contact() {
   const [copiedField, setCopiedField] = useState(null);
+  const [copyError, setCopyError] = useState(false);
+  const copyTimerRef = useRef(null);
+  const { content } = useSiteContent();
+  const c = content?.contact || {};
 
-  const handleCopy = (text, field) => {
-    navigator.clipboard.writeText(text).then(() => {
+  const pageTitle = c.pageTitle || 'Get In Touch';
+  const introLines = c.introLines || [];
+  const common = content?.common || {};
+  const copyButtonLabel = common.copyButtonLabel || 'Copy';
+  const copyFailedLabel = common.copyFailedLabel || 'Copy failed';
+  const email = c.email || { label: 'Email', value: 'luiscastrocoding@gmail.com' };
+  const linkedin = c.linkedin || {
+    label: 'LinkedIn',
+    displayValue: 'linkedin.com/in/luiscastrocoding',
+    url: 'https://www.linkedin.com/in/luiscastrocoding/'
+  };
+  const location = c.location || {
+    label: 'Location',
+    value: 'Santo Tirso (Porto, Portugal)',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Vila%20das%20Aves%2C%20Santo%20Tirso%2C%20Portugal'
+  };
+  const feedback = c.copyFeedback || {
+    email: 'Email copied',
+    linkedin: 'LinkedIn copied',
+    location: 'Location copied'
+  };
+
+  // Clear pending timer on unmount
+  useEffect(() => {
+    return () => {
+      if (copyTimerRef.current) clearTimeout(copyTimerRef.current);
+    };
+  }, []);
+
+  const handleCopy = async (text, field) => {
+    // Reset any pending feedback timer
+    if (copyTimerRef.current) clearTimeout(copyTimerRef.current);
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('unsupported');
+      await navigator.clipboard.writeText(text);
       setCopiedField(field);
-      setTimeout(() => setCopiedField(null), 1500);
-    });
+      setCopyError(false);
+    } catch {
+      setCopiedField(field);
+      setCopyError(true);
+    }
+    copyTimerRef.current = setTimeout(() => {
+      setCopiedField(null);
+      setCopyError(false);
+    }, 1500);
   };
 
   return (
     <main className="contact-page">
       <div className="contact-container">
-        {/* Page Header */}
-        <h1 className="page-title">Get In Touch</h1>
-        <div className="page-description">
-          <p>Feel free to reach out through any of the options below.</p>
-          <p>I&apos;m open to remote and international opportunities.</p>
-          <p>Based in Santo Tirso (Porto, Portugal).</p>
-        </div>
+        <EditableText path={['contact', 'pageTitle']} value={pageTitle} as="h1" className="page-title" />
+        {introLines.length > 0 && (
+          <div className="page-description">
+            {introLines.map((line, idx) => (
+              <EditableText key={idx} path={['contact', 'introLines', idx]} value={line} as="p" />
+            ))}
+          </div>
+        )}
 
-        {/* Contact Cards */}
         <div className="contact-grid">
-          {/* Email */}
           <div className="contact-card">
             <span className="contact-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="24" height="24">
@@ -40,30 +77,31 @@ function Contact() {
               </svg>
             </span>
             <div className="contact-text">
-              <h2 className="contact-label">Email</h2>
+              <h2 className="contact-label"><EditableText path={['contact', 'email', 'label']} value={email.label || 'Email'} /></h2>
               <div className="contact-value-row">
                 <a
-                  href="mailto:luiscastrocoding@gmail.com"
+                  href={`mailto:${email.value}`}
                   className="contact-link"
-                  aria-label="Send email to luiscastrocoding@gmail.com"
+                  aria-label={`Send email to ${email.value}`}
                 >
-                  luiscastrocoding@gmail.com
+                  {email.value}
                 </a>
                 <button
                   className="copy-btn"
-                  onClick={() => handleCopy('luiscastrocoding@gmail.com', 'email')}
+                  onClick={() => handleCopy(email.value, 'email')}
                   aria-label="Copy email"
                 >
-                  Copy
+                  {copyButtonLabel}
                 </button>
                 {copiedField === 'email' && (
-                  <span className="copy-feedback">Email copied</span>
+                  <span className={`copy-feedback${copyError ? ' copy-feedback-error' : ''}`}>
+                    {copyError ? copyFailedLabel : (feedback.email || 'Copied')}
+                  </span>
                 )}
               </div>
             </div>
           </div>
 
-          {/* LinkedIn */}
           <div className="contact-card">
             <span className="contact-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="24" height="24">
@@ -71,32 +109,33 @@ function Contact() {
               </svg>
             </span>
             <div className="contact-text">
-              <h2 className="contact-label">LinkedIn</h2>
+              <h2 className="contact-label"><EditableText path={['contact', 'linkedin', 'label']} value={linkedin.label || 'LinkedIn'} /></h2>
               <div className="contact-value-row">
                 <a
-                  href="https://www.linkedin.com/in/luiscastrocoding/"
+                  href={linkedin.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
                   aria-label="Visit LinkedIn profile"
                 >
-                  linkedin.com/in/luiscastrocoding
+                  {linkedin.displayValue || linkedin.url}
                 </a>
                 <button
                   className="copy-btn"
-                  onClick={() => handleCopy('https://www.linkedin.com/in/luiscastrocoding/', 'linkedin')}
+                  onClick={() => handleCopy(linkedin.url, 'linkedin')}
                   aria-label="Copy LinkedIn"
                 >
-                  Copy
+                  {copyButtonLabel}
                 </button>
                 {copiedField === 'linkedin' && (
-                  <span className="copy-feedback">LinkedIn copied</span>
+                  <span className={`copy-feedback${copyError ? ' copy-feedback-error' : ''}`}>
+                    {copyError ? copyFailedLabel : (feedback.linkedin || 'Copied')}
+                  </span>
                 )}
               </div>
             </div>
           </div>
 
-          {/* Location */}
           <div className="contact-card">
             <span className="contact-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="24" height="24">
@@ -104,26 +143,28 @@ function Contact() {
               </svg>
             </span>
             <div className="contact-text">
-              <h2 className="contact-label">Location</h2>
+              <h2 className="contact-label"><EditableText path={['contact', 'location', 'label']} value={location.label || 'Location'} /></h2>
               <div className="contact-value-row">
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Vila%20das%20Aves%2C%20Santo%20Tirso%2C%20Portugal"
+                  href={location.mapsUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="contact-link"
                   aria-label="Open location in Google Maps"
                 >
-                  Santo Tirso (Porto, Portugal)
+                  {location.value}
                 </a>
                 <button
                   className="copy-btn"
-                  onClick={() => handleCopy('Santo Tirso (Porto, Portugal)', 'location')}
+                  onClick={() => handleCopy(location.value, 'location')}
                   aria-label="Copy location"
                 >
-                  Copy
+                  {copyButtonLabel}
                 </button>
                 {copiedField === 'location' && (
-                  <span className="copy-feedback">Location copied</span>
+                  <span className={`copy-feedback${copyError ? ' copy-feedback-error' : ''}`}>
+                    {copyError ? copyFailedLabel : (feedback.location || 'Copied')}
+                  </span>
                 )}
               </div>
             </div>

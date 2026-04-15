@@ -29,6 +29,12 @@
 }
 
 /* Navigation Styles */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-list {
   display: flex;
   align-items: center;

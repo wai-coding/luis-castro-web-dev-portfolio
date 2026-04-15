@@ -1,165 +1,113 @@
+import { useSiteContent } from '../../contexts/SiteContentContext';
+import EditableText from '../../components/Editable/EditableText';
 import './About.css';
 
 function About() {
+  const { content } = useSiteContent();
+  const about = content?.about || {};
+
+  const pageTitle = about.pageTitle || 'About Me';
+  const pageDescription = about.pageDescription || '';
+  const sections = about.sections || [];
+  const educationTitle = about.educationTitle || 'Education';
+  const education = about.education || [];
+  const experienceTitle = about.experienceTitle || 'Professional Experience';
+  const experience = about.experience || [];
+  const certificationsTitle = about.certificationsTitle || 'Certifications';
+  const certifications = about.certifications || [];
+  const languagesTitle = about.languagesTitle || 'Languages';
+  const languages = about.languages || [];
+
   return (
     <main className="about">
       <div className="about-container">
 
-        {/* Page Header */}
-        <h1 className="page-title">About Me</h1>
-        <p className="page-description">
-          A structured and system-oriented Junior Full Stack Developer with a background in technology-driven creative fields. Focused on building scalable applications using modern JavaScript technologies and clean architecture principles.
-        </p>
+        <EditableText path={['about', 'pageTitle']} value={pageTitle} as="h1" className="page-title" />
+        {pageDescription && (
+          <EditableText path={['about', 'pageDescription']} value={pageDescription} as="p" className="page-description" multiline />
+        )}
 
-        {/* Who Am I */}
-        <section className="about-section">
-          <h2 className="section-title">Who Am I</h2>
-          <p className="about-text">
-            Luis is a Junior Full Stack Developer building structured and
-            scalable web applications with the MERN stack.
-          </p>
-          <p className="about-text">
-            Clean architecture, maintainable systems, and long-term product
-            thinking guide the way software is designed and implemented.
-          </p>
-          <p className="about-text">
-            Based in Porto, Portugal and open to remote and international
-            opportunities.
-          </p>
-        </section>
+        {sections.map((section, idx) => (
+          <section key={idx} className="about-section">
+            <EditableText path={['about', 'sections', idx, 'title']} value={section.title} as="h2" className="section-title" />
+            {(section.paragraphs || []).map((text, pIdx) => (
+              <EditableText key={pIdx} path={['about', 'sections', idx, 'paragraphs', pIdx]} value={text} as="p" className="about-text" multiline />
+            ))}
+          </section>
+        ))}
 
-        {/* How I Think About Building */}
-        <section className="about-section">
-          <h2 className="section-title">How I Think About Building</h2>
-          <p className="about-text">
-            A background in digital audio production and interactive systems
-            shaped a system-oriented mindset. Structure first, implementation
-            second.
-          </p>
-          <p className="about-text">
-            Applications are built with clarity and separation of concerns in
-            mind. Backend logic follows MVC principles, RESTful APIs are
-            designed for scalability, and React interfaces remain modular and
-            predictable as products grow.
-          </p>
-          <p className="about-text">
-            Shipping early, iterating fast, and refining architecture over time
-            is a preferred workflow.
-          </p>
-        </section>
+        {education.length > 0 && (
+          <section className="about-section">
+            <EditableText path={['about', 'educationTitle']} value={educationTitle} as="h2" className="section-title" />
+            {education.map((entry, idx) => (
+              <div key={idx} className="education-entry">
+                <EditableText path={['about', 'education', idx, 'title']} value={entry.title} as="h3" />
+                {entry.institution && (
+                  <EditableText path={['about', 'education', idx, 'institution']} value={entry.institution} as="p" className="institution" />
+                )}
+                {entry.items?.length > 0 && (
+                  <ul className="education-list">
+                    {entry.items.map((item, iIdx) => (
+                      <li key={iIdx}>
+                        <EditableText path={['about', 'education', idx, 'items', iIdx]} value={item} multiline />
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </section>
+        )}
 
-        {/* What I'm Looking For */}
-        <section className="about-section">
-          <h2 className="section-title">What I'm Looking For</h2>
-          <p className="about-text">
-            A Junior Full Stack or Frontend Developer role within a
-            product-driven team.
-          </p>
-          <p className="about-text">
-            Particular interest in startups or growing companies building
-            meaningful platforms where ownership, clean architecture, and code
-            quality matter.
-          </p>
-          <p className="about-text">
-            Contributing to real-world systems while continuing to grow in a
-            structured and collaborative environment is the next step.
-          </p>
-        </section>
+        {experience.length > 0 && (
+          <section className="about-section">
+            <EditableText path={['about', 'experienceTitle']} value={experienceTitle} as="h2" className="section-title" />
+            {experience.map((entry, idx) => (
+              <div key={idx} className="experience-entry">
+                <EditableText path={['about', 'experience', idx, 'title']} value={entry.title} as="h3" />
+                {entry.institution && (
+                  <EditableText path={['about', 'experience', idx, 'institution']} value={entry.institution} as="p" className="institution" />
+                )}
+                {entry.items?.length > 0 && (
+                  <ul className="experience-list">
+                    {entry.items.map((item, iIdx) => (
+                      <li key={iIdx}>
+                        <EditableText path={['about', 'experience', idx, 'items', iIdx]} value={item} multiline />
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </section>
+        )}
 
-        {/* Education */}
-        <section className="about-section">
-          <h2 className="section-title">Education</h2>
-          <div className="education-entry">
-            <h3>Full Stack Web Development Bootcamp</h3>
-            <p className="institution">Ironhack, 2025-2026</p>
-            <ul className="education-list">
-              <li>Full-time immersive program (+400 hours) focused on modern JavaScript and full-stack development</li>
-              <li>Built and deployed React-based frontend applications with modular component architecture</li>
-              <li>Developed backend systems using Node.js and Express</li>
-              <li>Designed RESTful APIs and implemented JWT-based authentication</li>
-              <li>Applied client-server architecture and collaborative Git workflows</li>
+        {certifications.length > 0 && (
+          <section className="about-section">
+            <EditableText path={['about', 'certificationsTitle']} value={certificationsTitle} as="h2" className="section-title" />
+            {certifications.map((cert, idx) => (
+              <div key={idx} className="certification-entry">
+                <EditableText path={['about', 'certifications', idx, 'title']} value={cert.title} as="h3" />
+                {cert.institution && (
+                  <EditableText path={['about', 'certifications', idx, 'institution']} value={cert.institution} as="p" className="institution" />
+                )}
+              </div>
+            ))}
+          </section>
+        )}
+
+        {languages.length > 0 && (
+          <section className="about-section">
+            <EditableText path={['about', 'languagesTitle']} value={languagesTitle} as="h2" className="section-title" />
+            <ul className="languages-list">
+              {languages.map((lang, idx) => (
+                <li key={idx}>
+                  <EditableText path={['about', 'languages', idx]} value={lang} />
+                </li>
+              ))}
             </ul>
-          </div>
-          <div className="education-entry">
-            <h3>Bachelor of Arts in Music Production & Electronic Music</h3>
-            <p className="institution">Instituto Politecnico de Castelo Branco, 2018-2021</p>
-            <ul className="education-list">
-              <li>Worked with programming-oriented tools such as Max/MSP, Java, and Arduino</li>
-              <li>Focused on music production and technology-driven creative systems</li>
-              <li>Extensive work with digital audio systems and signal flow design</li>
-              <li>Strengthened analytical thinking and structured problem-solving</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Professional Experience */}
-        <section className="about-section">
-          <h2 className="section-title">Professional Experience</h2>
-
-          <div className="experience-entry">
-            <h3>DJ & Music Producer</h3>
-            <p className="institution">Freelance, 2012-Present</p>
-            <ul className="experience-list">
-              <li>Designed and maintained complex technical setups for live performances</li>
-              <li>Worked with programming-oriented tools and hardware controllers</li>
-              <li>Managed projects from planning to execution under strict deadlines</li>
-            </ul>
-          </div>
-
-          <div className="experience-entry">
-            <h3>DJ Teacher</h3>
-            <p className="institution">35mm Portugal / WAI Studio / Freelance, 2023-Present</p>
-            <ul className="experience-list">
-              <li>Delivered structured lessons focused on digital audio tools and production workflows</li>
-              <li>Guided students through technical setups and systematic problem-solving</li>
-              <li>Adapted teaching methods to different learning styles</li>
-              <li>Strengthened communication, mentoring, and planning abilities</li>
-            </ul>
-          </div>
-
-          <div className="experience-entry">
-            <h3>ICT Teacher & Music Teacher</h3>
-            <p className="institution">Portuguese Public Education System, 2022</p>
-            <ul className="experience-list">
-              <li>Planned and delivered structured lessons within defined curricula</li>
-              <li>Developed strong communication and classroom management skills</li>
-              <li>Worked within institutional guidelines and deadlines</li>
-            </ul>
-          </div>
-
-          <div className="experience-entry">
-            <h3>Technical Advisor - Musical Instruments & Audio Equipment</h3>
-            <p className="institution">Faminho, 2017-2018</p>
-            <ul className="experience-list">
-              <li>Provided technical consultation and troubleshooting</li>
-              <li>Assisted clients in selecting and configuring audio equipment</li>
-              <li>Strengthened technical support and communication skills</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Certifications */}
-        <section className="about-section">
-          <h2 className="section-title">Certifications</h2>
-          <div className="certification-entry">
-            <h3>First Certificate in English (FCE), 2012</h3>
-            <p className="institution">Cambridge English Language Assessment</p>
-          </div>
-          <div className="certification-entry">
-            <h3>Introduction to HTML, CSS & JavaScript, 2021</h3>
-            <p className="institution">European Parliament</p>
-          </div>
-        </section>
-
-        {/* Languages */}
-        <section className="about-section">
-          <h2 className="section-title">Languages</h2>
-          <ul className="languages-list">
-            <li>Portuguese (Native)</li>
-            <li>English (Fluent)</li>
-            <li>Spanish (Beginner)</li>
-          </ul>
-        </section>
+          </section>
+        )}
 
       </div>
     </main>

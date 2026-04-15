@@ -1,0 +1,204 @@
+{
+  "common": {
+    "copyButtonLabel": "Copy",
+    "copyFailedLabel": "Copy failed",
+    "viewDetailsLabel": "View details",
+    "liveDemoLabel": "Live Demo",
+    "frontendRepoLabel": "Frontend Repo",
+    "backendRepoLabel": "Backend Repo",
+    "githubRepoLabel": "GitHub Repo"
+  },
+  "header": {
+    "navLinks": [
+      { "label": "Home", "path": "/" },
+      { "label": "Projects", "path": "/projects" },
+      { "label": "About Me", "path": "/about" },
+      { "label": "Contact", "path": "/contact" }
+    ]
+  },
+  "footer": {
+    "copyrightName": "Luís Castro",
+    "copyrightSuffix": "Built with React.",
+    "availabilityNote": "Currently seeking a Junior Frontend or Full-Stack role. Open to remote opportunities.",
+    "linkedinUrl": "https://www.linkedin.com/in/luiscastrocoding",
+    "githubUrl": "https://github.com/wai-coding"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "name": "Luís Castro",
+    "title": "Full-Stack Web Developer (MERN)",
+    "headline": "I build web applications using React, Node.js and MongoDB, working across both frontend interfaces and backend REST APIs.",
+    "description": "Ironhack Web Development Bootcamp graduate (400+ hours). Based in Porto, Portugal. Open to remote and international roles.",
+    "ctaPrimaryLabel": "View Projects",
+    "ctaSecondaryLabel": "Contact Me",
+    "technologiesTitle": "Technologies I Work With",
+    "featuredProjectsTitle": "Featured Projects",
+    "moreProjectsTitle": "More Projects",
+    "viewAllProjectsLabel": "View All Projects",
+    "technologies": [
+      { "name": "React", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+      { "name": "JavaScript", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+      { "name": "Node.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+      { "name": "Express.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg", "invert": true },
+      { "name": "MongoDB", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+      { "name": "REST API", "icon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3C/svg%3E" },
+      { "name": "JWT Auth", "icon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0110 0v4'/%3E%3C/svg%3E" },
+      { "name": "Git & GitHub", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+      { "name": "HTML & CSS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" }
+    ]
+  },
+  "projects": {
+    "pageTitle": "My Projects",
+    "pageDescription": "Projects built during and after my bootcamp, covering real-world features like authentication, CRUD, filtering, and clean UI patterns. Click any project to see details, key features, and repos.",
+    "filtersLabel": "Filters",
+    "clearFiltersLabel": "Clear all",
+    "noResultsMessage": "No projects match the selected filters."
+  },
+  "about": {
+    "pageTitle": "About Me",
+    "pageDescription": "Junior Full Stack Developer with a background in technology-driven creative fields. Focused on building clean, scalable applications with modern JavaScript and the MERN stack.",
+    "sections": [
+      {
+        "title": "Who Am I",
+        "paragraphs": [
+          "Luís is a Junior Full Stack Developer building web applications with the MERN stack.",
+          "Clean architecture, maintainable code, and practical product thinking guide how software is designed and built.",
+          "Based in Porto, Portugal and open to remote and international opportunities."
+        ]
+      },
+      {
+        "title": "How I Approach Building",
+        "paragraphs": [
+          "A background in digital audio production and interactive systems shaped a system-oriented way of thinking. Structure first, then implementation.",
+          "Applications are built with clarity and separation of concerns in mind. Backend logic follows MVC principles, APIs are RESTful, and React interfaces stay modular and predictable as projects grow.",
+          "Shipping early, iterating fast, and refining over time is the preferred workflow."
+        ]
+      },
+      {
+        "title": "What I'm Looking For",
+        "paragraphs": [
+          "A Junior Full Stack or Frontend Developer role within a product-driven team.",
+          "Interested in startups or growing companies building real products where ownership, clean code, and quality matter.",
+          "Looking to contribute to real-world systems while continuing to grow in a collaborative environment."
+        ]
+      }
+    ],
+    "educationTitle": "Education",
+    "education": [
+      {
+        "title": "Full Stack Web Development Bootcamp",
+        "institution": "Ironhack, 2025-2026",
+        "items": [
+          "Full-time immersive program (+400 hours) focused on modern JavaScript and full-stack development",
+          "Built and deployed React-based frontend applications with modular component architecture",
+          "Developed backend systems using Node.js and Express",
+          "Designed RESTful APIs and implemented JWT-based authentication",
+          "Applied client-server architecture and collaborative Git workflows"
+        ]
+      },
+      {
+        "title": "Bachelor of Arts in Music Production & Electronic Music",
+        "institution": "Instituto Politecnico de Castelo Branco, 2018-2021",
+        "items": [
+          "Worked with programming-oriented tools such as Max/MSP, Java, and Arduino",
+          "Focused on music production and technology-driven creative systems",
+          "Extensive work with digital audio systems and signal flow design",
+          "Strengthened analytical thinking and structured problem-solving"
+        ]
+      }
+    ],
+    "experienceTitle": "Professional Experience",
+    "experience": [
+      {
+        "title": "DJ & Music Producer",
+        "institution": "Freelance, 2012-Present",
+        "items": [
+          "Designed and maintained complex technical setups for live performances",
+          "Worked with programming-oriented tools and hardware controllers",
+          "Managed projects from planning to execution under strict deadlines"
+        ]
+      },
+      {
+        "title": "DJ Teacher",
+        "institution": "35mm Portugal / WAI Studio / Freelance, 2023-Present",
+        "items": [
+          "Delivered structured lessons focused on digital audio tools and production workflows",
+          "Guided students through technical setups and systematic problem-solving",
+          "Adapted teaching methods to different learning styles",
+          "Strengthened communication, mentoring, and planning abilities"
+        ]
+      },
+      {
+        "title": "ICT Teacher & Music Teacher",
+        "institution": "Portuguese Public Education System, 2022",
+        "items": [
+          "Planned and delivered structured lessons within defined curricula",
+          "Developed strong communication and classroom management skills",
+          "Worked within institutional guidelines and deadlines"
+        ]
+      },
+      {
+        "title": "Technical Advisor - Musical Instruments & Audio Equipment",
+        "institution": "Faminho, 2017-2018",
+        "items": [
+          "Provided technical consultation and troubleshooting",
+          "Assisted clients in selecting and configuring audio equipment",
+          "Strengthened technical support and communication skills"
+        ]
+      }
+    ],
+    "certificationsTitle": "Certifications",
+    "certifications": [
+      {
+        "title": "First Certificate in English (FCE), 2012",
+        "institution": "Cambridge English Language Assessment"
+      },
+      {
+        "title": "Introduction to HTML, CSS & JavaScript, 2021",
+        "institution": "European Parliament"
+      }
+    ],
+    "languagesTitle": "Languages",
+    "languages": [
+      "Portuguese (Native)",
+      "English (Fluent)",
+      "Spanish (Beginner)"
+    ]
+  },
+  "contact": {
+    "pageTitle": "Get In Touch",
+    "introLines": [
+      "Feel free to reach out through any of the options below.",
+      "I'm open to remote and international opportunities.",
+      "Based in Santo Tirso (Porto, Portugal)."
+    ],
+    "email": {
+      "label": "Email",
+      "value": "luiscastrocoding@gmail.com"
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "displayValue": "linkedin.com/in/luiscastrocoding",
+      "url": "https://www.linkedin.com/in/luiscastrocoding/"
+    },
+    "location": {
+      "label": "Location",
+      "value": "Santo Tirso (Porto, Portugal)",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vila%20das%20Aves%2C%20Santo%20Tirso%2C%20Portugal"
+    },
+    "copyFeedback": {
+      "email": "Email copied",
+      "linkedin": "LinkedIn copied",
+      "location": "Location copied"
+    }
+  },
+  "projectDetails": {
+    "keyFeaturesTitle": "Key Features",
+    "whatILearnedTitle": "What I Learned",
+    "techStackTitle": "Tech Stack",
+    "backToProjectsLabel": "Back to Projects",
+    "notFoundTitle": "Project not found",
+    "notFoundText": "The project you're looking for doesn't exist or has been removed.",
+    "notFoundButtonLabel": "Back to Projects"
+  }
+}
